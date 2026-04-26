@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy Policy - Codatus</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <script data-goatcounter="https://codatus.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+    <div class="topbar"><div class="topbar-inner"><a class="wordmark" href="/">CODATUS</a><nav class="topnav"><a href="/#how">What happens after install</a><a href="https://github.com/apps/codatus-scanner/installations/new">Install</a><a href="https://github.com/CodatusHQ/scanner">View source</a></nav></div></div>
+
+    <div class="container">
+        <article class="content">
+            <h1>Privacy Policy</h1>
+            <p class="effective-date">Effective date: 25 April 2026</p>
+
+            <h2>1. Who we are</h2>
+            <p>Codatus ("we", "us") is operated by Cove Innovations, s.r.o. For any privacy-related questions, contact us at <a href="mailto:hello@codatus.com">hello@codatus.com</a>.</p>
+
+            <h2>2. What data we collect</h2>
+            <p>When you install the Codatus GitHub App on your organization, we receive and store:</p>
+            <ul>
+                <li><strong>Installation metadata</strong> from GitHub: installation ID, organization name, installing user's login, and account ID.</li>
+                <li><strong>Repository metadata</strong> read via GitHub's API during a scan: repository names, branch names, branch protection settings, workflow configurations, permissions, and security settings.</li>
+                <li><strong>Scan results</strong>: the compliance report generated from the metadata above.</li>
+                <li><strong>Email address and GitHub identity</strong>, if you choose to sign in with GitHub on the Codatus request-sent page to be notified when an organization admin approves your install request. We store your verified GitHub email, your GitHub user ID and login, and the organizations your install request applies to.</li>
+                <li><strong>Feedback you submit</strong> through the feedback form on the scan report page. We store the text of your feedback and, if you provide it, the email address you enter so we can follow up.</li>
+            </ul>
+            <p>We do <strong>not</strong> collect or store:</p>
+            <ul>
+                <li>Source code from any repository.</li>
+                <li>Cookies on site visitors. The codatus.com site sets no cookies of its own.</li>
+                <li>Any personal information not listed above.</li>
+            </ul>
+            <p>We use a privacy-friendly analytics service (see Section 4) for aggregate visit counts only. It sets no cookies, does not track visitors across sessions, and stores no IP addresses.</p>
+
+            <h2>3. How we use your data</h2>
+            <p>We use the data above only to:</p>
+            <ul>
+                <li>Run compliance scans you request.</li>
+                <li>Show you the resulting report.</li>
+                <li>Publish the report as a GitHub issue in a repository you select (only when you click "Create issue").</li>
+                <li>Identify your installation on return visits via a cryptographically random token in the URL.</li>
+                <li>Email you a link to your scan when an organization admin approves an install request you submitted (only if you chose to sign in with GitHub to subscribe to this notification).</li>
+                <li>Review feedback you submit in order to improve the product, and reply to you if you provided an email.</li>
+            </ul>
+            <p>We do not sell your data, share it with third parties for marketing, or use it to train machine learning models.</p>
+
+            <h2>4. Where your data is stored and who processes it</h2>
+            <p>Scan data, captured emails, and feedback are stored in a managed PostgreSQL database hosted in the European Union. The application itself runs on Fly.io infrastructure in the Frankfurt, Germany region.</p>
+            <p>We use <a href="https://resend.com">Resend</a> as our email delivery provider to send approval notifications. When we send you an email, your email address and the message body are transmitted to Resend. See Resend's privacy notice for details of how they handle this data.</p>
+            <p>We use <a href="https://www.goatcounter.com/">GoatCounter</a> for aggregate site analytics on codatus.com. GoatCounter records page-view counts, the country a visit came from, the referrer URL, and basic browser/screen information. It sets no cookies, does not store IP addresses (the IP is used briefly for country lookup and discarded), and does not track visitors across sessions or sites.</p>
+
+            <h2>5. How long we keep your data</h2>
+            <p>When you uninstall the Codatus GitHub App, we immediately mark your installation as deleted. You lose access to that installation's reports and no further scans can be initiated for it. Reinstalling the app creates a new, independent installation and a fresh scan. We currently retain your deleted installation record and past scan reports indefinitely for operational reasons.</p>
+            <p>We also retain captured notification emails (from sign-in for approval alerts) and feedback submissions indefinitely unless you ask us to delete them.</p>
+            <p>You may request permanent deletion of any of your records at any time by emailing <a href="mailto:hello@codatus.com">hello@codatus.com</a>.</p>
+
+            <h2>6. GitHub's role</h2>
+            <p>Codatus is a GitHub App. GitHub is the primary data controller for your GitHub account, organization, and repositories. Please also review <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement">GitHub's Privacy Statement</a>. You can review and revoke Codatus's permissions at any time in your GitHub organization's <em>Installed GitHub Apps</em> settings.</p>
+
+            <h2>7. Your rights</h2>
+            <p>If you are in the European Economic Area, United Kingdom, or a jurisdiction with similar laws, you have the right to:</p>
+            <ul>
+                <li>Access the personal data we hold about you.</li>
+                <li>Request correction of inaccurate data.</li>
+                <li>Request deletion of your data (in most cases, uninstalling the GitHub App achieves this).</li>
+                <li>Object to or restrict processing.</li>
+                <li>Request data portability.</li>
+                <li>Lodge a complaint with your local data protection authority.</li>
+            </ul>
+            <p>To exercise any of these rights, email <a href="mailto:hello@codatus.com">hello@codatus.com</a>.</p>
+
+            <h2>8. Security</h2>
+            <p>We protect your data with industry-standard practices: TLS for all network traffic, access controls on the database, and principle-of-least-privilege on our GitHub App permissions (read-only on repository metadata, write only on issues you explicitly ask us to create).</p>
+
+            <h2>9. Changes to this policy</h2>
+            <p>We may update this policy from time to time. When we do, we'll update the "Effective date" above and, for material changes, notify active installations via a GitHub issue or notice on this page.</p>
+
+            <h2>10. Contact</h2>
+            <p>Questions? Email <a href="mailto:hello@codatus.com">hello@codatus.com</a>.</p>
+        </article>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <span class="footer-left">&copy; 2026 Codatus</span>
+            <span class="footer-right">
+                <a href="mailto:hello@codatus.com">Contact</a>
+                <a href="/privacy/">Privacy</a>
+                <a href="/terms/">Terms</a>
+                <a href="https://github.com/CodatusHQ/scanner">View source</a>
+            </span>
+        </div>
+    </footer>
+</body>
+</html>
