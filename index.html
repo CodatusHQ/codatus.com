@@ -91,9 +91,9 @@
                             <tr><td>Has required reviewers</td><td>6</td><td>4</td><td>60%</td></tr>
                             <tr><td>Has branch protection</td><td>7</td><td>3</td><td>70%</td></tr>
                             <tr><td>Has CI workflow</td><td>8</td><td>2</td><td>80%</td></tr>
+                            <tr><td>Has activity</td><td>8</td><td>2</td><td>80%</td></tr>
                             <tr><td>Has repo description</td><td>9</td><td>1</td><td>90%</td></tr>
                             <tr><td>Has substantial README</td><td>9</td><td>1</td><td>90%</td></tr>
-                            <tr><td>Has .gitignore</td><td>10</td><td>0</td><td>100%</td></tr>
                             <tr><td>Has LICENSE</td><td>10</td><td>0</td><td>100%</td></tr>
                         </tbody>
                     </table>
@@ -104,10 +104,6 @@
                         <h3>Has repo description</h3>
                         <p><strong>What it checks:</strong> The repository has a non-empty description set in repo settings (visible at the top of the GitHub repo page).</p>
                         <p><strong>How to fix:</strong> Edit the repo and add a one-line description.</p>
-
-                        <h3>Has .gitignore</h3>
-                        <p><strong>What it checks:</strong> A .gitignore file exists at the repository root.</p>
-                        <p><strong>How to fix:</strong> Add a .gitignore at the repo root. <a href="https://github.com/github/gitignore">GitHub publishes templates per language</a>.</p>
 
                         <h3>Has substantial README</h3>
                         <p><strong>What it checks:</strong> A README.md file exists at the repository root and is larger than 2 KB.</p>
@@ -144,6 +140,10 @@
                         <h3>Requires status checks before merging</h3>
                         <p><strong>What it checks:</strong> The default branch's protection rules require at least one status check to pass before a PR can be merged.</p>
                         <p><strong>How to fix:</strong> In repo Settings &gt; Branches, edit the default-branch protection rule and turn on "Require status checks to pass before merging".</p>
+
+                        <h3>Has activity</h3>
+                        <p><strong>What it checks:</strong> The repository has had a commit (push) within the last 12 months.</p>
+                        <p><strong>How to fix:</strong> Push a commit, or archive the repository if it is no longer maintained.</p>
                     </details>
 
                     <h2>✅ Fully compliant (3 repos)</h2>
@@ -196,20 +196,22 @@
                         </ul>
                     </details>
                     <details>
-                        <summary><a href="#">internal-tools</a> - 3 failing</summary>
+                        <summary><a href="#">internal-tools</a> - 4 failing</summary>
                         <ul>
                             <li>Has SECURITY.md</li>
                             <li>Has CODEOWNERS</li>
                             <li>Requires status checks before merging</li>
+                            <li>Has activity</li>
                         </ul>
                     </details>
                     <details>
-                        <summary><a href="#">mobile-sdk</a> - 4 failing</summary>
+                        <summary><a href="#">mobile-sdk</a> - 5 failing</summary>
                         <ul>
                             <li>Has repo description</li>
                             <li>Has SECURITY.md</li>
                             <li>Has test directory</li>
                             <li>Has CODEOWNERS</li>
+                            <li>Has activity</li>
                         </ul>
                     </details>
                     <details>
