@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Codatus - GitHub compliance scanner</title>
-    <meta name="description" content="Scan your GitHub organization for common compliance gaps. One install, one report, under a minute.">
+    <title>Codatus - GitHub repo scorecard for platform teams</title>
+    <meta name="description" content="See how every repo in your org stacks up: branch protection, code ownership, CI, documentation. One install, one scorecard, under a minute.">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,18 +19,18 @@
             <div class="topbar-inner">
                 <a class="wordmark" href="/">CODATUS</a>
                 <nav class="topnav">
-                    <a href="#how">What happens after install</a>
                     <a href="https://github.com/apps/codatus-scanner/installations/new">Install</a>
                     <a href="https://github.com/CodatusHQ/scanner">View source</a>
+                    <a href="/about/">About</a>
                 </nav>
             </div>
         </div>
         <section class="hero">
-            <h1>GitHub compliance,<br><span class="accent">reported in seconds.</span></h1>
-            <p class="lede">See which repos in your org are missing baseline hygiene - READMEs, LICENSE files, CI, branch protection, and more. One install, one report, under a minute.</p>
+            <h1>GitHub repo scorecard<br><span class="accent">for platform teams.</span></h1>
+            <p class="lede">See how every repo in your org stacks up: branch protection, code ownership, CI, documentation. One install, one scorecard, under a minute.</p>
             <div class="hero-actions">
                 <a class="btn btn-primary btn-large" href="https://github.com/apps/codatus-scanner/installations/new" data-goatcounter-click="install-clicked" data-goatcounter-title="Install on GitHub (hero)">Install on GitHub</a>
-                <a class="btn btn-secondary btn-large" href="#sample" data-goatcounter-click="sample-clicked" data-goatcounter-title="See a sample report">See a sample report</a>
+                <a class="btn btn-secondary btn-large" href="#sample" data-goatcounter-click="sample-clicked" data-goatcounter-title="See a sample scorecard">See a sample scorecard</a>
             </div>
             <p class="hero-note">Not an admin? GitHub will ask your admin to approve. We'll email you the moment the scan is ready.</p>
         </section>
@@ -70,10 +70,10 @@
         <div class="sample-tinted-inner">
             <div class="report-card" id="sample">
                 <div class="card-lead">
-                    <p>Here's what a scan looks like. Below is a sample report Codatus generated for a fictional organization, <strong>acme-corp</strong>, with 11 repositories.</p>
+                    <p>Here's what a scorecard looks like. Below is a sample Codatus generated for a fictional organization, <strong>acme-corp</strong>, with 11 repositories.</p>
                 </div>
                 <div class="report">
-                    <h1>Codatus - Org Compliance Report</h1>
+                    <h1>Codatus - Engineering Standards Scorecard</h1>
                     <p><strong>Org:</strong> acme-corp<br>
                     <strong>Scanned:</strong> 2026-04-19 14:32 UTC<br>
                     <strong>Repos scanned:</strong> 10<br>
@@ -233,7 +233,7 @@
 
             <div class="after-report">
                 <p>Run a scan like this for your organization:</p>
-                <a class="btn btn-primary btn-large" href="https://github.com/apps/codatus-scanner/installations/new" style="color:#1a1a1a" data-goatcounter-click="install-clicked" data-goatcounter-title="Install on GitHub (after sample report)">Install on GitHub</a>
+                <a class="btn btn-primary btn-large" href="https://github.com/apps/codatus-scanner/installations/new" style="color:#1a1a1a" data-goatcounter-click="install-clicked" data-goatcounter-title="Install on GitHub (after sample scorecard)">Install on GitHub</a>
             </div>
         </div>
     </section>
@@ -249,13 +249,13 @@
                 </li>
                 <li>
                     <span class="step-num">2</span>
-                    <h3>Report opens in your browser</h3>
-                    <p>You're taken straight to a live compliance report - no login, no extra setup. The URL is yours to bookmark or share with your team.</p>
+                    <h3>Scorecard opens in your browser</h3>
+                    <p>You're taken straight to a live scorecard - no login, no extra setup. The URL is yours to bookmark or share with your team.</p>
                 </li>
                 <li>
                     <span class="step-num">3</span>
                     <h3>Share or publish</h3>
-                    <p>Download the report as Markdown, or post it as a GitHub issue in a repo of your choice with one click.</p>
+                    <p>Download the scorecard as Markdown, or post it as a GitHub issue in a repo of your choice with one click.</p>
                 </li>
             </ol>
         </section>
@@ -280,7 +280,6 @@
                 <a href="mailto:hello@codatus.com">Contact</a>
                 <a href="/privacy/">Privacy</a>
                 <a href="/terms/">Terms</a>
-                <a href="https://github.com/CodatusHQ/scanner">View source</a>
             </span>
         </div>
     </footer>
