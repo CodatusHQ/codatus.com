@@ -53,163 +53,7 @@ description: "See how every repo in your org stacks up: branch protection, code 
                 <div class="card-lead">
                     <p>Here's what a scorecard looks like. Below is a sample Codatus generated for a fictional organization, <strong>acme-corp</strong>, with 11 repositories.</p>
                 </div>
-                <div class="report">
-                    <h1>Codatus - Engineering Standards Scorecard</h1>
-                    <p><strong>Org:</strong> acme-corp<br>
-                    <strong>Scanned:</strong> 2026-04-19 14:32 UTC<br>
-                    <strong>Repos scanned:</strong> 10<br>
-                    <strong>Compliant:</strong> 3/10 (30%) <em>(a repo is compliant when it passes all rules below)</em><br>
-                    <strong>Skipped:</strong> 1</p>
-
-                    <h2>Summary</h2>
-                    <table>
-                        <thead><tr><th>Rule</th><th>Passing</th><th>Failing</th><th>Pass rate</th></tr></thead>
-                        <tbody>
-                            <tr><td>Has SECURITY.md</td><td>3</td><td>7</td><td>30%</td></tr>
-                            <tr><td>Has CODEOWNERS</td><td>3</td><td>7</td><td>30%</td></tr>
-                            <tr><td>Requires status checks before merging</td><td>4</td><td>6</td><td>40%</td></tr>
-                            <tr><td>Has test directory</td><td>5</td><td>5</td><td>50%</td></tr>
-                            <tr><td>Has required reviewers</td><td>6</td><td>4</td><td>60%</td></tr>
-                            <tr><td>Has branch protection</td><td>7</td><td>3</td><td>70%</td></tr>
-                            <tr><td>Has CI workflow</td><td>8</td><td>2</td><td>80%</td></tr>
-                            <tr><td>Has activity</td><td>8</td><td>2</td><td>80%</td></tr>
-                            <tr><td>Has repo description</td><td>9</td><td>1</td><td>90%</td></tr>
-                            <tr><td>Has substantial README</td><td>9</td><td>1</td><td>90%</td></tr>
-                            <tr><td>Has LICENSE</td><td>10</td><td>0</td><td>100%</td></tr>
-                        </tbody>
-                    </table>
-
-                    <details>
-                        <summary>Rule reference - what each rule checks and how to fix it</summary>
-
-                        <h3>Has repo description</h3>
-                        <p><strong>What it checks:</strong> The repository has a non-empty description set in repo settings (visible at the top of the GitHub repo page).</p>
-                        <p><strong>How to fix:</strong> Edit the repo and add a one-line description.</p>
-
-                        <h3>Has substantial README</h3>
-                        <p><strong>What it checks:</strong> A README.md file exists at the repository root and is larger than 2 KB.</p>
-                        <p><strong>How to fix:</strong> Expand your README to cover what the project is, how to install it, and how to use it.</p>
-
-                        <h3>Has LICENSE</h3>
-                        <p><strong>What it checks:</strong> A LICENSE or LICENSE.md file exists at the repository root.</p>
-                        <p><strong>How to fix:</strong> Pick a license at <a href="https://choosealicense.com">choosealicense.com</a> and add it to your repo root.</p>
-
-                        <h3>Has SECURITY.md</h3>
-                        <p><strong>What it checks:</strong> A SECURITY.md file exists at the repository root or in .github/.</p>
-                        <p><strong>How to fix:</strong> Add a SECURITY.md describing how to report vulnerabilities. <a href="https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository">GitHub's template</a>.</p>
-
-                        <h3>Has CI workflow</h3>
-                        <p><strong>What it checks:</strong> At least one .yml or .yaml workflow file exists in .github/workflows/.</p>
-                        <p><strong>How to fix:</strong> Add a YAML workflow in .github/workflows/. <a href="https://docs.github.com/en/actions/quickstart">GitHub Actions quickstart</a>.</p>
-
-                        <h3>Has test directory</h3>
-                        <p><strong>What it checks:</strong> A directory named test, tests, __tests__, spec, or specs exists at the repository root.</p>
-                        <p><strong>How to fix:</strong> Create a test/ or tests/ directory at the repo root and add at least one test file.</p>
-
-                        <h3>Has CODEOWNERS</h3>
-                        <p><strong>What it checks:</strong> A CODEOWNERS file exists at the repo root, in .github/, or in docs/.</p>
-                        <p><strong>How to fix:</strong> Add a CODEOWNERS file mapping paths to GitHub users or teams. <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners">GitHub docs</a>.</p>
-
-                        <h3>Has branch protection</h3>
-                        <p><strong>What it checks:</strong> A branch-protection rule is configured on the default branch.</p>
-                        <p><strong>How to fix:</strong> In repo Settings &gt; Branches, add a protection rule for the default branch. <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches">GitHub docs</a>.</p>
-
-                        <h3>Has required reviewers</h3>
-                        <p><strong>What it checks:</strong> The default branch's protection rules require at least one approving review before a PR can be merged.</p>
-                        <p><strong>How to fix:</strong> In repo Settings &gt; Branches, edit the default-branch protection rule and turn on "Require pull request reviews before merging" with at least 1 required reviewer.</p>
-
-                        <h3>Requires status checks before merging</h3>
-                        <p><strong>What it checks:</strong> The default branch's protection rules require at least one status check to pass before a PR can be merged.</p>
-                        <p><strong>How to fix:</strong> In repo Settings &gt; Branches, edit the default-branch protection rule and turn on "Require status checks to pass before merging".</p>
-
-                        <h3>Has activity</h3>
-                        <p><strong>What it checks:</strong> The repository has had a commit (push) within the last 12 months.</p>
-                        <p><strong>How to fix:</strong> Push a commit, or archive the repository if it is no longer maintained.</p>
-                    </details>
-
-                    <h2>✅ Fully compliant (3 repos)</h2>
-                    <details><summary>All rules passing</summary>
-                        <p><a href="#">auth-service</a><br><a href="#">billing-service</a><br><a href="#">docs-site</a></p>
-                    </details>
-
-                    <h2>❌ Non-compliant (7 repos)</h2>
-                    <details open>
-                        <summary><a href="#">api-gateway</a> - 5 failing</summary>
-                        <ul>
-                            <li>Has SECURITY.md</li>
-                            <li>Has CODEOWNERS</li>
-                            <li>Has branch protection</li>
-                            <li>Has required reviewers</li>
-                            <li>Requires status checks before merging</li>
-                        </ul>
-                    </details>
-                    <details>
-                        <summary><a href="#">data-pipeline</a> - 8 failing</summary>
-                        <ul>
-                            <li>Has substantial README</li>
-                            <li>Has SECURITY.md</li>
-                            <li>Has CI workflow</li>
-                            <li>Has test directory</li>
-                            <li>Has CODEOWNERS</li>
-                            <li>Has branch protection</li>
-                            <li>Has required reviewers</li>
-                            <li>Requires status checks before merging</li>
-                        </ul>
-                    </details>
-                    <details>
-                        <summary><a href="#">event-queue</a> - 4 failing</summary>
-                        <ul>
-                            <li>Has SECURITY.md</li>
-                            <li>Has test directory</li>
-                            <li>Has CODEOWNERS</li>
-                            <li>Requires status checks before merging</li>
-                        </ul>
-                    </details>
-                    <details>
-                        <summary><a href="#">feature-flags</a> - 6 failing</summary>
-                        <ul>
-                            <li>Has SECURITY.md</li>
-                            <li>Has test directory</li>
-                            <li>Has CODEOWNERS</li>
-                            <li>Has branch protection</li>
-                            <li>Has required reviewers</li>
-                            <li>Requires status checks before merging</li>
-                        </ul>
-                    </details>
-                    <details>
-                        <summary><a href="#">internal-tools</a> - 4 failing</summary>
-                        <ul>
-                            <li>Has SECURITY.md</li>
-                            <li>Has CODEOWNERS</li>
-                            <li>Requires status checks before merging</li>
-                            <li>Has activity</li>
-                        </ul>
-                    </details>
-                    <details>
-                        <summary><a href="#">mobile-sdk</a> - 5 failing</summary>
-                        <ul>
-                            <li>Has repo description</li>
-                            <li>Has SECURITY.md</li>
-                            <li>Has test directory</li>
-                            <li>Has CODEOWNERS</li>
-                            <li>Has activity</li>
-                        </ul>
-                    </details>
-                    <details>
-                        <summary><a href="#">web-frontend</a> - 6 failing</summary>
-                        <ul>
-                            <li>Has SECURITY.md</li>
-                            <li>Has CI workflow</li>
-                            <li>Has test directory</li>
-                            <li>Has CODEOWNERS</li>
-                            <li>Has required reviewers</li>
-                            <li>Requires status checks before merging</li>
-                        </ul>
-                    </details>
-
-                    <h2>⚠️ Skipped (1 repo)</h2>
-                    <ul><li><a href="#">legacy-mirror</a> - repository is empty</li></ul>
-                </div>
+                <div class="report" id="sample-report">Loading sample...</div>
             </div>
 
             <div class="after-report">
@@ -253,4 +97,23 @@ description: "See how every repo in your org stacks up: branch protection, code 
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+    (function() {
+        var div = document.getElementById('sample-report');
+        if (!div) return;
+        fetch('/sample-scorecard.md')
+            .then(function(r) {
+                if (!r.ok) throw new Error('fetch failed: ' + r.status);
+                return r.text();
+            })
+            .then(function(md) {
+                div.innerHTML = marked.parse(md);
+            })
+            .catch(function() {
+                div.textContent = 'Could not load sample. Try refreshing the page.';
+            });
+    })();
+    </script>
 
