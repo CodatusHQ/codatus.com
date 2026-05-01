@@ -1,31 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Codatus - GitHub repo scorecard for platform teams</title>
-    <meta name="description" content="See how every repo in your org stacks up: branch protection, code ownership, CI, documentation. One install, one scorecard, under a minute.">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script data-goatcounter="https://codatus.goatcounter.com/count"
-            async src="//gc.zgo.at/count.js"></script>
-</head>
-<body class="home">
-    <div class="dark-block">
-        <div class="topbar">
-            <div class="topbar-inner">
-                <a class="wordmark" href="/">CODATUS</a>
-                <nav class="topnav">
-                    <a href="https://github.com/apps/codatus-scanner/installations/new">Install</a>
-                    <a href="https://github.com/CodatusHQ/scanner">View source</a>
-                    <a href="/about/">About</a>
-                </nav>
-            </div>
-        </div>
-        <section class="hero">
+---
+layout: default
+body_class: home
+title: Codatus - GitHub repo scorecard for platform teams
+description: "See how every repo in your org stacks up: branch protection, code ownership, CI, documentation. One install, one scorecard, under a minute."
+---
+<div class="dark-block">
+    {% include topbar.html %}
+    <section class="hero">
             <h1>GitHub repo scorecard<br><span class="accent">for platform teams.</span></h1>
             <p class="lede">See how every repo in your org stacks up: branch protection, code ownership, CI, documentation. One install, one scorecard, under a minute.</p>
             <div class="hero-actions">
@@ -273,15 +254,3 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="footer-inner">
-            <span class="footer-left">&copy; 2026 Codatus</span>
-            <span class="footer-right">
-                <a href="mailto:hello@codatus.com">Contact</a>
-                <a href="/privacy/">Privacy</a>
-                <a href="/terms/">Terms</a>
-            </span>
-        </div>
-    </footer>
-</body>
-</html>

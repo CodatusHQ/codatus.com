@@ -1,0 +1,8 @@
+title: Codatus
+url: https://codatus.com
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
