@@ -2,6 +2,8 @@
 
 **Org:** acme-corp
 **Scanned:** 2026-04-19 14:32 UTC
+**Total repos:** 14
+**Forks excluded:** 3
 **Repos scanned:** 10
 **Compliant:** 3/10 (30%) *(a repo is compliant when it passes all rules below)*
 **Skipped:** 1
