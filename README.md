@@ -77,7 +77,7 @@ The custom domain (`codatus.com`) is set via `CNAME`. GitHub auto-issues the Let
 `sample-scorecard.md` is consumed by `index.html` (fetched at page load and rendered with marked.js). It's a verbatim copy of the canonical sample produced by [the scanner repo's fixture](https://github.com/CodatusHQ/scanner/blob/main/samples/fixture.go). When the scanner's report format or the fixture changes, refresh the local copy and commit it:
 
 ```sh
-go run github.com/CodatusHQ/scanner/cmd/generate-sample@v0.7.0 > sample-scorecard.md
+go run github.com/CodatusHQ/scanner/cmd/generate-sample@v0.7.1 > sample-scorecard.md
 ```
 
 (Bump the version pin to whatever scanner release you want to track.) Don't hand-edit `sample-scorecard.md` - the scanner's fixture is the single source of truth, and any local edits will be overwritten by the next regen. If the intro paragraph in [index.html](index.html) references specific numbers (repo count, exclusions), update those by hand to match the new fixture.
