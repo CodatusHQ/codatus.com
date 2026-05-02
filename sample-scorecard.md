@@ -1,12 +1,8 @@
 # Codatus - Engineering Standards Scorecard
 
-**Org:** acme-corp
-**Scanned:** 2026-05-01 10:30 UTC
-**Total repos:** 15
-**Forks excluded:** 3
-**Archived excluded:** 1
-**Repos scanned:** 10
-**Skipped:** 1
+**Org:** acme-corp<br>
+**Scanned:** 2026-05-01 10:30 UTC<br>
+**Repos:** 10 of 15 scanned (3 forks excluded, 1 archived excluded, 1 skipped)
 
 ## Scored rules
 
@@ -22,7 +18,7 @@
 
 ## Additional checks
 
-| Check | Passing | Failing | Coverage |
+| Rule | Passing | Failing | Pass rate |
 |------|---------|---------|----------|
 | Has README | 9 | 1 | 90% |
 | Has LICENSE | 7 | 3 | 70% |
@@ -35,19 +31,19 @@
 ### Strong (≥80%)
 
 <details>
-<summary><a href="https://github.com/acme-corp/acme-api">acme-api</a> - 100% (5/5 scored rules passing)</summary>
+<summary><a href="https://github.com/acme-corp/acme-api">acme-api</a> - 100%</summary>
 
 </details>
 
 <details>
-<summary><a href="https://github.com/acme-corp/acme-platform">acme-platform</a> - 100% (5/5 scored rules passing)</summary>
+<summary><a href="https://github.com/acme-corp/acme-platform">acme-platform</a> - 100%</summary>
 
 </details>
 
 ### Moderate (40-79%)
 
 <details>
-<summary><a href="https://github.com/acme-corp/acme-analytics">acme-analytics</a> - 60% (3/5 scored rules passing)</summary>
+<summary><a href="https://github.com/acme-corp/acme-analytics">acme-analytics</a> - 60%</summary>
 
 **Failing scored rules:**
 - Has required reviewers
@@ -59,7 +55,7 @@
 </details>
 
 <details>
-<summary><a href="https://github.com/acme-corp/acme-billing">acme-billing</a> - 60% (3/5 scored rules passing)</summary>
+<summary><a href="https://github.com/acme-corp/acme-billing">acme-billing</a> - 60%</summary>
 
 **Failing scored rules:**
 - Requires status checks before merging
@@ -68,19 +64,7 @@
 </details>
 
 <details>
-<summary><a href="https://github.com/acme-corp/acme-dashboard">acme-dashboard</a> - 60% (3/5 scored rules passing)</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-
-**Additional check failures:**
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/acme-corp/acme-mobile">acme-mobile</a> - 60% (3/5 scored rules passing)</summary>
+<summary><a href="https://github.com/acme-corp/acme-dashboard">acme-dashboard</a> - 60%</summary>
 
 **Failing scored rules:**
 - Requires status checks before merging
@@ -92,7 +76,19 @@
 </details>
 
 <details>
-<summary><a href="https://github.com/acme-corp/acme-search">acme-search</a> - 60% (3/5 scored rules passing)</summary>
+<summary><a href="https://github.com/acme-corp/acme-mobile">acme-mobile</a> - 60%</summary>
+
+**Failing scored rules:**
+- Requires status checks before merging
+- Has CODEOWNERS
+
+**Additional check failures:**
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/acme-corp/acme-search">acme-search</a> - 60%</summary>
 
 **Failing scored rules:**
 - Has required reviewers
@@ -106,7 +102,7 @@
 ### Weak (≤39%)
 
 <details>
-<summary><a href="https://github.com/acme-corp/acme-internal-tools">acme-internal-tools</a> - 20% (1/5 scored rules passing)</summary>
+<summary><a href="https://github.com/acme-corp/acme-internal-tools">acme-internal-tools</a> - 20%</summary>
 
 **Failing scored rules:**
 - Has branch protection
@@ -123,7 +119,7 @@
 </details>
 
 <details>
-<summary><a href="https://github.com/acme-corp/acme-legacy">acme-legacy</a> - 20% (1/5 scored rules passing)</summary>
+<summary><a href="https://github.com/acme-corp/acme-legacy">acme-legacy</a> - 20%</summary>
 
 **Failing scored rules:**
 - Has branch protection
@@ -139,7 +135,7 @@
 </details>
 
 <details>
-<summary><a href="https://github.com/acme-corp/acme-prototype">acme-prototype</a> - 20% (1/5 scored rules passing)</summary>
+<summary><a href="https://github.com/acme-corp/acme-prototype">acme-prototype</a> - 20%</summary>
 
 **Failing scored rules:**
 - Has branch protection
@@ -155,6 +151,10 @@
 - Has SECURITY.md
 
 </details>
+
+### Skipped (1 repo)
+
+- [acme-empty](https://github.com/acme-corp/acme-empty) - repository is empty
 
 ## Rule reference
 
@@ -232,7 +232,3 @@
 - **How to fix:** Add a SECURITY.md describing how to report vulnerabilities. [GitHub's template](https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository).
 
 </details>
-
-## ⚠️ Skipped (1 repo)
-
-- [acme-empty](https://github.com/acme-corp/acme-empty) - repository is empty
