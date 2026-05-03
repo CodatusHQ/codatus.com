@@ -1,7 +1,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{% if page.org %}
+{%- assign sc_title = "Codatus scorecard - " | append: page.org -%}
+{%- capture sc_desc -%}Engineering standards scorecard for the {{ page.org }} GitHub organization. Branch protection, code ownership, CI, and documentation across all public repos.{%- endcapture -%}
+<title>{{ sc_title }}</title>
+<meta name="description" content="{{ sc_desc }}">
+<meta property="og:title" content="{{ sc_title }}">
+<meta property="og:description" content="{{ sc_desc }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+{% else %}
 <title>{{ page.title | default: site.title }}</title>
 {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+{% endif %}
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
