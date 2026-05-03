@@ -506,3 +506,16 @@ body.home .container { padding: 16px 24px 12px; }
     text-decoration: none;
 }
 .ea-card-cta a:hover { background: #d49318; }
+
+/* Per-org scorecard pages (/scorecard/<Org>/). The scorecard markdown body
+   reuses .sample-tinted-band + .report-card + .report from the homepage
+   sample, so kramdown-rendered scorecards visually match the marked.js
+   sample at the top of the home page. */
+.scorecard-title { padding: 56px 24px 8px; text-align: center; }
+.scorecard-title-inner { max-width: 720px; margin: 0 auto; }
+.scorecard-title h1 { font-size: 28px; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; line-height: 1.25; }
+.scorecard-title .scorecard-subtitle { font-size: 15px; color: #666; line-height: 1.55; }
+
+.scorecard-cta { padding: 40px 24px 64px; text-align: center; }
+.scorecard-cta-inner { max-width: 720px; margin: 0 auto; }
+.scorecard-cta p { font-size: 13.5px; color: #666; margin-top: 18px; line-height: 1.55; }

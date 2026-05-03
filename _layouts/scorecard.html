@@ -1,0 +1,45 @@
+---
+layout: default
+---
+{% include topbar.html %}
+
+<section class="scorecard-title">
+    <div class="scorecard-title-inner">
+        <h1>Codatus scorecard for {{ page.org }}</h1>
+        <p class="scorecard-subtitle">A one-time scan of public GitHub repos against baseline engineering standards.</p>
+    </div>
+</section>
+
+<section class="sample-tinted-band">
+    <div class="sample-tinted-inner">
+        <div class="report-card">
+            <div class="report" id="scorecard-report">Loading scorecard…</div>
+        </div>
+    </div>
+</section>
+
+<section class="scorecard-cta">
+    <div class="scorecard-cta-inner">
+        <a class="btn btn-primary btn-large" href="https://github.com/apps/codatus-scanner/installations/new" data-goatcounter-click="install-clicked-scorecard" data-goatcounter-title="Install on GitHub (from {{ page.org }} scorecard)">Install Codatus on GitHub</a>
+        <p>Install on any GitHub organization to run a private scan that includes private repos.</p>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+    (function () {
+        var div = document.getElementById('scorecard-report');
+        // The .md sits next to this index.html on disk; relative URL works
+        // for both /scorecard/Org/ and /scorecard/Org/index.html.
+        fetch('scorecard.md')
+            .then(function (r) {
+                if (!r.ok) throw new Error('fetch failed: ' + r.status);
+                return r.text();
+            })
+            .then(function (md) { div.innerHTML = marked.parse(md); })
+            .catch(function (err) {
+                div.textContent = 'Could not load scorecard. Try refreshing the page.';
+                console.error(err);
+            });
+    })();
+</script>
