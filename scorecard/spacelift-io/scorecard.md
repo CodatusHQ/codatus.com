@@ -1,7 +1,7 @@
 # Codatus - Repo Standards Scorecard
 
 **Org:** spacelift-io<br>
-**Scanned:** 2026-05-04 14:29 UTC<br>
+**Scanned:** 2026-05-06 21:06 UTC (scanner v0.8.4)<br>
 **Repos:** 85 of 132 scanned (32 forks excluded, 15 archived excluded)
 
 ## Scored rules
@@ -9,7 +9,7 @@
 | Rule | Passing | Failing | Pass rate |
 |------|---------|---------|----------|
 | Has branch protection | 27 | 58 | 31% |
-| Requires status checks before merging | 10 | 75 | 11% |
+| Has required checks | 10 | 75 | 11% |
 | Has CODEOWNERS | 29 | 56 | 34% |
 | Has CI workflow | 55 | 30 | 64% |
 
@@ -38,9 +38,9 @@ Checks that the default branch has a protection rule in place. Detected via any 
 
 ---
 
-#### Requires status checks before merging
+#### Has required checks
 
-Checks that the default branch's protection requires at least one status check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (a `required_status_checks` rule), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: edit the default-branch rule (or ruleset), enable "Require status checks to pass before merging", and select at least one check.
+Checks that the default branch's protection requires at least one programmatic check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (rule types `required_status_checks`, `workflows`, `code_scanning`, `code_quality`, or `required_deployments`), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: in Rulesets or Branch protection rules, add any check-passing requirement on the default branch.
 
 ---
 
@@ -163,7 +163,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/backstage-plugins">backstage-plugins</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -174,7 +174,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/ec2-workerpool-autoscaler">ec2-workerpool-autoscaler</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -197,7 +197,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/pulumi-spacelift">pulumi-spacelift</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -208,7 +208,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/runner-ansible">runner-ansible</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has repo description
@@ -220,7 +220,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/runner-pulumi">runner-pulumi</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -232,7 +232,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -243,7 +243,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/spacectl">spacectl</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -254,7 +254,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/spacelift-helm-charts">spacelift-helm-charts</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has repo description
@@ -266,7 +266,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/spacelift-intent">spacelift-intent</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -277,7 +277,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/spacelift-migration-kit">spacelift-migration-kit</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -289,7 +289,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/spacelift-policies-example-library">spacelift-policies-example-library</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -300,7 +300,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/spacelift-user-guides-library">spacelift-user-guides-library</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -311,7 +311,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/spcontext">spcontext</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -325,7 +325,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -337,7 +337,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has repo description
@@ -350,7 +350,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -361,7 +361,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/terraform-aws-spacelift-workerpool-on-ec2">terraform-aws-spacelift-workerpool-on-ec2</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -373,7 +373,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -385,7 +385,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -397,7 +397,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -408,7 +408,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/terraform-provider-flows">terraform-provider-flows</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -432,7 +432,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/terraform-spacelift-msteams">terraform-spacelift-msteams</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CI workflow
 
 **Additional check failures:**
@@ -444,7 +444,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/vcs-agent">vcs-agent</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -458,7 +458,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -472,7 +472,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -485,7 +485,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -499,7 +499,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -515,7 +515,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -529,7 +529,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -543,7 +543,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -558,7 +558,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -572,7 +572,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -587,7 +587,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -600,7 +600,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -614,7 +614,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -627,7 +627,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -640,7 +640,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -653,7 +653,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -666,7 +666,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -679,7 +679,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -692,7 +692,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -705,7 +705,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -718,7 +718,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -731,7 +731,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -746,7 +746,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -761,7 +761,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -776,7 +776,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -791,7 +791,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -806,7 +806,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -820,7 +820,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -834,7 +834,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -849,7 +849,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -864,7 +864,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -880,7 +880,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -895,7 +895,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -908,7 +908,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -923,7 +923,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -937,7 +937,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -950,7 +950,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -965,7 +965,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -980,7 +980,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -993,7 +993,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1008,7 +1008,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1023,7 +1023,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -1038,7 +1038,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -1053,7 +1053,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1069,7 +1069,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -1083,7 +1083,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CI workflow
 
 **Additional check failures:**
@@ -1096,7 +1096,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1110,7 +1110,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1123,7 +1123,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/spacelift-io/terraform-spacelift-stack">terraform-spacelift-stack</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1137,7 +1137,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1151,7 +1151,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1166,7 +1166,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1180,7 +1180,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 

@@ -1,7 +1,7 @@
 # Codatus - Repo Standards Scorecard
 
 **Org:** tines<br>
-**Scanned:** 2026-05-04 14:41 UTC<br>
+**Scanned:** 2026-05-06 21:19 UTC (scanner v0.8.4)<br>
 **Repos:** 5 of 8 scanned (1 forks excluded, 2 archived excluded)
 
 ## Scored rules
@@ -9,7 +9,7 @@
 | Rule | Passing | Failing | Pass rate |
 |------|---------|---------|----------|
 | Has branch protection | 5 | 0 | 100% |
-| Requires status checks before merging | 2 | 3 | 40% |
+| Has required checks | 2 | 3 | 40% |
 | Has CODEOWNERS | 2 | 3 | 40% |
 | Has CI workflow | 3 | 2 | 60% |
 
@@ -38,9 +38,9 @@ Checks that the default branch has a protection rule in place. Detected via any 
 
 ---
 
-#### Requires status checks before merging
+#### Has required checks
 
-Checks that the default branch's protection requires at least one status check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (a `required_status_checks` rule), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: edit the default-branch rule (or ruleset), enable "Require status checks to pass before merging", and select at least one check.
+Checks that the default branch's protection requires at least one programmatic check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (rule types `required_status_checks`, `workflows`, `code_scanning`, `code_quality`, or `required_deployments`), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: in Rulesets or Branch protection rules, add any check-passing requirement on the default branch.
 
 ---
 
@@ -109,7 +109,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/tines/ruby_lzma_gem">ruby_lzma_gem</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -124,7 +124,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/tines/community-stories">community-stories</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -139,7 +139,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/tines/stories">stories</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 

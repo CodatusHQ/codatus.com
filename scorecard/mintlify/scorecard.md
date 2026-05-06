@@ -1,7 +1,7 @@
 # Codatus - Repo Standards Scorecard
 
 **Org:** mintlify<br>
-**Scanned:** 2026-05-04 14:40 UTC<br>
+**Scanned:** 2026-05-06 21:17 UTC (scanner v0.8.4)<br>
 **Repos:** 25 of 30 scanned (3 forks excluded, 2 archived excluded)
 
 ## Scored rules
@@ -9,7 +9,7 @@
 | Rule | Passing | Failing | Pass rate |
 |------|---------|---------|----------|
 | Has branch protection | 17 | 8 | 68% |
-| Requires status checks before merging | 1 | 24 | 4% |
+| Has required checks | 1 | 24 | 4% |
 | Has CODEOWNERS | 1 | 24 | 4% |
 | Has CI workflow | 3 | 22 | 12% |
 
@@ -38,9 +38,9 @@ Checks that the default branch has a protection rule in place. Detected via any 
 
 ---
 
-#### Requires status checks before merging
+#### Has required checks
 
-Checks that the default branch's protection requires at least one status check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (a `required_status_checks` rule), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: edit the default-branch rule (or ruleset), enable "Require status checks to pass before merging", and select at least one check.
+Checks that the default branch's protection requires at least one programmatic check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (rule types `required_status_checks`, `workflows`, `code_scanning`, `code_quality`, or `required_deployments`), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: in Rulesets or Branch protection rules, add any check-passing requirement on the default branch.
 
 ---
 
@@ -105,7 +105,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/mintlify/config">config</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CI workflow
 
 **Additional check failures:**
@@ -119,7 +119,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/mintlify/docs">docs</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -131,7 +131,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/mintlify/writer">writer</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -146,7 +146,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/mintlify/assistant-embed-example">assistant-embed-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -159,7 +159,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/mintlify/astro">astro</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -172,7 +172,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/mintlify/docs-hermine">docs-hermine</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -186,7 +186,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/mintlify/docs-leylandcompany915-22607c5a">docs-leylandcompany915-22607c5a</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -201,7 +201,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -215,7 +215,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/mintlify/documentation">documentation</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -230,7 +230,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -246,7 +246,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/mintlify/guides">guides</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -261,7 +261,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -277,7 +277,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/mintlify/install-md">install-md</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -291,7 +291,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -307,7 +307,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/mintlify/mdx">mdx</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -322,7 +322,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -335,7 +335,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/mintlify/mintlify-claude-plugin">mintlify-claude-plugin</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -348,7 +348,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/mintlify/mintlify-docs">mintlify-docs</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -363,7 +363,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -377,7 +377,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/mintlify/multirepo-action">multirepo-action</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -393,7 +393,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -409,7 +409,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/mintlify/starter">starter</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -423,7 +423,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -438,7 +438,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/mintlify/themes">themes</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 

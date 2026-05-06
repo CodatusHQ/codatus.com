@@ -1,29 +1,29 @@
 # Codatus - Repo Standards Scorecard
 
 **Org:** workos<br>
-**Scanned:** 2026-05-04 14:33 UTC<br>
-**Repos:** 59 of 104 scanned (3 forks excluded, 42 archived excluded)
+**Scanned:** 2026-05-06 21:10 UTC (scanner v0.8.4)<br>
+**Repos:** 61 of 105 scanned (3 forks excluded, 41 archived excluded)
 
 ## Scored rules
 
 | Rule | Passing | Failing | Pass rate |
 |------|---------|---------|----------|
-| Has branch protection | 33 | 26 | 55% |
-| Requires status checks before merging | 15 | 44 | 25% |
-| Has CODEOWNERS | 18 | 41 | 30% |
-| Has CI workflow | 33 | 26 | 55% |
+| Has branch protection | 34 | 27 | 55% |
+| Has required checks | 15 | 46 | 24% |
+| Has CODEOWNERS | 18 | 43 | 29% |
+| Has CI workflow | 34 | 27 | 55% |
 
-**Score: 41/100** (average pass rate across the scored rules above)
+**Score: 40/100** (average pass rate across the scored rules above)
 
 ## Additional checks
 
 | Rule | Passing | Failing | Pass rate |
 |------|---------|---------|----------|
-| Has README | 59 | 0 | 100% |
-| Has LICENSE | 39 | 20 | 66% |
-| Has repo description | 47 | 12 | 79% |
-| Has activity | 58 | 1 | 98% |
-| Has SECURITY.md | 3 | 56 | 5% |
+| Has README | 61 | 0 | 100% |
+| Has LICENSE | 40 | 21 | 65% |
+| Has repo description | 49 | 12 | 80% |
+| Has activity | 60 | 1 | 98% |
+| Has SECURITY.md | 3 | 58 | 4% |
 
 ## Rule reference
 
@@ -38,9 +38,9 @@ Checks that the default branch has a protection rule in place. Detected via any 
 
 ---
 
-#### Requires status checks before merging
+#### Has required checks
 
-Checks that the default branch's protection requires at least one status check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (a `required_status_checks` rule), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: edit the default-branch rule (or ruleset), enable "Require status checks to pass before merging", and select at least one check.
+Checks that the default branch's protection requires at least one programmatic check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (rule types `required_status_checks`, `workflows`, `code_scanning`, `code_quality`, or `required_deployments`), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: in Rulesets or Branch protection rules, add any check-passing requirement on the default branch.
 
 ---
 
@@ -189,7 +189,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/authkit-react">authkit-react</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -223,7 +223,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/authkit-sveltekit">authkit-sveltekit</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has repo description
@@ -235,7 +235,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/authkit-tanstack-start">authkit-tanstack-start</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -246,7 +246,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/cli-action">cli-action</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -258,7 +258,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/dotnet-example-applications">dotnet-example-applications</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -271,7 +271,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/edge-agent">edge-agent</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -283,7 +283,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/fga-row-level-access-control-postgres">fga-row-level-access-control-postgres</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CI workflow
 
 **Additional check failures:**
@@ -296,7 +296,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/go-example-applications">go-example-applications</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -331,7 +331,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/openapi-spec">openapi-spec</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -342,7 +342,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/php-example-applications">php-example-applications</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -355,7 +355,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/pipes-mcp">pipes-mcp</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -366,7 +366,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/vercel-mcp-example">vercel-mcp-example</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has repo description
@@ -378,7 +378,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/workos-elixir">workos-elixir</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -389,7 +389,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/workos-migrations">workos-migrations</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has repo description
@@ -403,7 +403,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -419,7 +419,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -432,7 +432,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -448,7 +448,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -464,7 +464,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -477,7 +477,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -492,7 +492,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -507,7 +507,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -522,7 +522,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -537,7 +537,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -553,7 +553,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -569,7 +569,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -579,7 +579,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/migrate-auth0-users">migrate-auth0-users</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -594,7 +594,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -608,7 +608,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -622,7 +622,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/next-b2b-starter-kit">next-b2b-starter-kit</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -633,7 +633,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -647,7 +647,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -661,7 +661,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -675,7 +675,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -689,7 +689,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/react-router-authkit-example">react-router-authkit-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -704,7 +704,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -719,7 +719,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -729,11 +729,25 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
+<summary><a href="https://github.com/workos/renovate-config">renovate-config</a> - 25%</summary>
+
+**Failing scored rules:**
+- Has required checks
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has LICENSE
+- Has SECURITY.md
+
+</details>
+
+<details>
 <summary><a href="https://github.com/workos/ruby-authkit-example">ruby-authkit-example</a> - 0%</summary>
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -747,7 +761,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -762,7 +776,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -776,7 +790,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -789,7 +803,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -805,7 +819,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -818,9 +832,22 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/workos/workos-demo">workos-demo</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
+
+**Additional check failures:**
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/workos/workos-explore">workos-explore</a> - 25%</summary>
+
+**Failing scored rules:**
+- Has branch protection
+- Has required checks
+- Has CODEOWNERS
 
 **Additional check failures:**
 - Has SECURITY.md

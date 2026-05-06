@@ -1,7 +1,7 @@
 # Codatus - Repo Standards Scorecard
 
 **Org:** resend<br>
-**Scanned:** 2026-05-04 14:38 UTC<br>
+**Scanned:** 2026-05-06 21:16 UTC (scanner v0.8.4)<br>
 **Repos:** 84 of 96 scanned (4 forks excluded, 8 archived excluded)
 
 ## Scored rules
@@ -9,11 +9,11 @@
 | Rule | Passing | Failing | Pass rate |
 |------|---------|---------|----------|
 | Has branch protection | 68 | 16 | 80% |
-| Requires status checks before merging | 7 | 77 | 8% |
+| Has required checks | 13 | 71 | 15% |
 | Has CODEOWNERS | 2 | 82 | 2% |
 | Has CI workflow | 29 | 55 | 34% |
 
-**Score: 31/100** (average pass rate across the scored rules above)
+**Score: 32/100** (average pass rate across the scored rules above)
 
 ## Additional checks
 
@@ -38,9 +38,9 @@ Checks that the default branch has a protection rule in place. Detected via any 
 
 ---
 
-#### Requires status checks before merging
+#### Has required checks
 
-Checks that the default branch's protection requires at least one status check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (a `required_status_checks` rule), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: edit the default-branch rule (or ruleset), enable "Require status checks to pass before merging", and select at least one check.
+Checks that the default branch's protection requires at least one programmatic check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (rule types `required_status_checks`, `workflows`, `code_scanning`, `code_quality`, or `required_deployments`), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: in Rulesets or Branch protection rules, add any check-passing requirement on the default branch.
 
 ---
 
@@ -109,7 +109,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/email-best-practices">email-best-practices</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -122,7 +122,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/homebrew-cli">homebrew-cli</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -133,10 +133,9 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/resend/react-email-next-intl-example">react-email-next-intl-example</a> - 50%</summary>
+<summary><a href="https://github.com/resend/react-email-next-intl-example">react-email-next-intl-example</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -145,10 +144,9 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/resend/react-email-react-i18next-example">react-email-react-i18next-example</a> - 50%</summary>
+<summary><a href="https://github.com/resend/react-email-react-i18next-example">react-email-react-i18next-example</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -157,10 +155,9 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/resend/react-email-react-intl-example">react-email-react-intl-example</a> - 50%</summary>
+<summary><a href="https://github.com/resend/react-email-react-intl-example">react-email-react-intl-example</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -172,7 +169,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-chat-sdk">resend-chat-sdk</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -195,7 +192,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-cloudflare-workers-example">resend-cloudflare-workers-example</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -207,7 +204,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-dotnet">resend-dotnet</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -219,7 +216,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-go">resend-go</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -242,7 +239,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-java">resend-java</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -254,7 +251,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-laravel">resend-laravel</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -274,10 +271,9 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/resend/resend-next-intl-example">resend-next-intl-example</a> - 50%</summary>
+<summary><a href="https://github.com/resend/resend-next-intl-example">resend-next-intl-example</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -300,7 +296,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-openapi">resend-openapi</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -313,7 +309,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-php">resend-php</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -325,7 +321,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-python">resend-python</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -334,10 +330,9 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/resend/resend-react-i18next-example">resend-react-i18next-example</a> - 50%</summary>
+<summary><a href="https://github.com/resend/resend-react-i18next-example">resend-react-i18next-example</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -346,10 +341,9 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/resend/resend-react-intl-example">resend-react-intl-example</a> - 50%</summary>
+<summary><a href="https://github.com/resend/resend-react-intl-example">resend-react-intl-example</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -372,7 +366,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-ruby">resend-ruby</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -385,7 +379,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-rust">resend-rust</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -397,7 +391,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-skills">resend-skills</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -409,7 +403,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-webhooks-ingester">resend-webhooks-ingester</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -422,7 +416,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/sonare">sonare</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -437,7 +431,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/astro-resend-tutorial">astro-resend-tutorial</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -452,7 +446,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -467,7 +461,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -480,7 +474,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/react-email-pnpm-example">react-email-pnpm-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -494,7 +488,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/react-email-turborepo-bun-example">react-email-turborepo-bun-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -508,7 +502,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/react-email-turborepo-npm-example">react-email-turborepo-npm-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -522,7 +516,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/react-email-turborepo-pnpm-example">react-email-turborepo-pnpm-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -536,7 +530,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/react-email-turborepo-yarn-example">react-email-turborepo-yarn-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -551,7 +545,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -567,7 +561,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-aws-lambda-example">resend-aws-lambda-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -582,7 +576,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -596,7 +590,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-bun-example">resend-bun-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -609,7 +603,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-curl-example">resend-curl-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -622,7 +616,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-deno-deploy-example">resend-deno-deploy-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -635,7 +629,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-django-example">resend-django-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -650,7 +644,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -665,7 +659,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -678,7 +672,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-double-opt-in-example">resend-double-opt-in-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -692,7 +686,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-elixir-example">resend-elixir-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -705,7 +699,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-examples">resend-examples</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -718,7 +712,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-express-example">resend-express-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -732,7 +726,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -747,7 +741,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-flask-example">resend-flask-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -761,7 +755,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-go-example">resend-go-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -774,7 +768,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-java-example">resend-java-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -787,7 +781,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-laravel-example">resend-laravel-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -802,7 +796,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -817,7 +811,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-next-server-actions-example">resend-next-server-actions-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -832,7 +826,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-nextjs-app-router-example">resend-nextjs-app-router-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -845,7 +839,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-nextjs-pages-router-example">resend-nextjs-pages-router-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -859,7 +853,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -873,7 +867,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -887,7 +881,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-node-example">resend-node-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -901,7 +895,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -915,7 +909,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-nodemailer-smtp-example">resend-nodemailer-smtp-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -928,7 +922,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-phoenix-example">resend-phoenix-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -941,7 +935,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-php-example">resend-php-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -954,7 +948,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-phpmailer-smtp-example">resend-phpmailer-smtp-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -967,7 +961,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-python-example">resend-python-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -980,7 +974,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-rails-example">resend-rails-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -994,7 +988,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-rails-smtp-example">resend-rails-smtp-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1008,7 +1002,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-react-email-edge">resend-react-email-edge</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1022,7 +1016,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-redwoodjs-example">resend-redwoodjs-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1035,7 +1029,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-ruby-example">resend-ruby-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1049,7 +1043,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1062,7 +1056,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-sinatra-example">resend-sinatra-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1075,7 +1069,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-supabase-edge-functions-example">resend-supabase-edge-functions-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1089,7 +1083,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1103,7 +1097,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1116,7 +1110,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-template-example">resend-template-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1131,7 +1125,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-vercel-example">resend-vercel-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1144,7 +1138,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-vercel-functions-example">resend-vercel-functions-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1157,7 +1151,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/resend/resend-wget-example">resend-wget-example</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1171,7 +1165,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -1186,7 +1180,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
