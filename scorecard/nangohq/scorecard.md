@@ -1,29 +1,29 @@
 # Codatus - Repo Standards Scorecard
 
 **Org:** NangoHQ<br>
-**Scanned:** 2026-05-04 14:38 UTC<br>
-**Repos:** 14 of 19 scanned (2 forks excluded, 3 archived excluded)
+**Scanned:** 2026-05-06 21:15 UTC (scanner v0.8.4)<br>
+**Repos:** 15 of 20 scanned (2 forks excluded, 3 archived excluded)
 
 ## Scored rules
 
 | Rule | Passing | Failing | Pass rate |
 |------|---------|---------|----------|
-| Has branch protection | 4 | 10 | 28% |
-| Requires status checks before merging | 2 | 12 | 14% |
-| Has CODEOWNERS | 0 | 14 | 0% |
-| Has CI workflow | 5 | 9 | 35% |
+| Has branch protection | 4 | 11 | 26% |
+| Has required checks | 2 | 13 | 13% |
+| Has CODEOWNERS | 0 | 15 | 0% |
+| Has CI workflow | 5 | 10 | 33% |
 
-**Score: 19/100** (average pass rate across the scored rules above)
+**Score: 18/100** (average pass rate across the scored rules above)
 
 ## Additional checks
 
 | Rule | Passing | Failing | Pass rate |
 |------|---------|---------|----------|
-| Has README | 13 | 1 | 92% |
-| Has LICENSE | 4 | 10 | 28% |
-| Has repo description | 12 | 2 | 85% |
-| Has activity | 10 | 4 | 71% |
-| Has SECURITY.md | 0 | 14 | 0% |
+| Has README | 13 | 2 | 86% |
+| Has LICENSE | 4 | 11 | 26% |
+| Has repo description | 13 | 2 | 86% |
+| Has activity | 11 | 4 | 73% |
+| Has SECURITY.md | 0 | 15 | 0% |
 
 ## Rule reference
 
@@ -38,9 +38,9 @@ Checks that the default branch has a protection rule in place. Detected via any 
 
 ---
 
-#### Requires status checks before merging
+#### Has required checks
 
-Checks that the default branch's protection requires at least one status check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (a `required_status_checks` rule), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: edit the default-branch rule (or ruleset), enable "Require status checks to pass before merging", and select at least one check.
+Checks that the default branch's protection requires at least one programmatic check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (rule types `required_status_checks`, `workflows`, `code_scanning`, `code_quality`, or `required_deployments`), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: in Rulesets or Branch protection rules, add any check-passing requirement on the default branch.
 
 ---
 
@@ -116,7 +116,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/NangoHQ/nango-helm-charts">nango-helm-charts</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -132,7 +132,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -148,7 +148,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -159,11 +159,27 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
+<summary><a href="https://github.com/NangoHQ/blog-demos">blog-demos</a> - 0%</summary>
+
+**Failing scored rules:**
+- Has branch protection
+- Has required checks
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has README
+- Has LICENSE
+- Has SECURITY.md
+
+</details>
+
+<details>
 <summary><a href="https://github.com/NangoHQ/eslint-config">eslint-config</a> - 0%</summary>
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -179,7 +195,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -195,7 +211,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -210,7 +226,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -224,7 +240,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -240,7 +256,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -256,7 +272,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -270,7 +286,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
@@ -284,7 +300,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/NangoHQ/skills">skills</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 

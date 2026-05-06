@@ -1,7 +1,7 @@
 # Codatus - Repo Standards Scorecard
 
 **Org:** socketdev<br>
-**Scanned:** 2026-05-04 14:36 UTC<br>
+**Scanned:** 2026-05-06 21:13 UTC (scanner v0.8.4)<br>
 **Repos:** 24 of 44 scanned (3 forks excluded, 17 archived excluded)
 
 ## Scored rules
@@ -9,11 +9,11 @@
 | Rule | Passing | Failing | Pass rate |
 |------|---------|---------|----------|
 | Has branch protection | 24 | 0 | 100% |
-| Requires status checks before merging | 4 | 20 | 16% |
+| Has required checks | 18 | 6 | 75% |
 | Has CODEOWNERS | 5 | 19 | 20% |
 | Has CI workflow | 16 | 8 | 66% |
 
-**Score: 50/100** (average pass rate across the scored rules above)
+**Score: 65/100** (average pass rate across the scored rules above)
 
 ## Additional checks
 
@@ -38,9 +38,9 @@ Checks that the default branch has a protection rule in place. Detected via any 
 
 ---
 
-#### Requires status checks before merging
+#### Has required checks
 
-Checks that the default branch's protection requires at least one status check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (a `required_status_checks` rule), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: edit the default-branch rule (or ruleset), enable "Require status checks to pass before merging", and select at least one check.
+Checks that the default branch's protection requires at least one programmatic check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (rule types `required_status_checks`, `workflows`, `code_scanning`, `code_quality`, or `required_deployments`), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: in Rulesets or Branch protection rules, add any check-passing requirement on the default branch.
 
 ---
 
@@ -91,6 +91,14 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 ### Strong (≥80%)
 
 <details>
+<summary><a href="https://github.com/socketdev/socket-basics">socket-basics</a> - 100%</summary>
+
+**Additional check failures:**
+- Has SECURITY.md
+
+</details>
+
+<details>
 <summary><a href="https://github.com/socketdev/socket-python-cli">socket-python-cli</a> - 100%</summary>
 
 **Additional check failures:**
@@ -117,10 +125,24 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 ### Moderate (30-79%)
 
 <details>
-<summary><a href="https://github.com/socketdev/action">action</a> - 50%</summary>
+<summary><a href="https://github.com/socketdev/.github">.github</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has README
+- Has LICENSE
+- Has repo description
+- Has activity
+
+</details>
+
+<details>
+<summary><a href="https://github.com/socketdev/action">action</a> - 75%</summary>
+
+**Failing scored rules:**
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -129,14 +151,53 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/socketdev/bun-security-scanner">bun-security-scanner</a> - 50%</summary>
+<summary><a href="https://github.com/socketdev/bun-security-scanner">bun-security-scanner</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
 - Has CODEOWNERS
 
 **Additional check failures:**
 - Has LICENSE
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/socketdev/firewall-release">firewall-release</a> - 50%</summary>
+
+**Failing scored rules:**
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has LICENSE
+- Has repo description
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/socketdev/promise-diagnostics-hook">promise-diagnostics-hook</a> - 50%</summary>
+
+**Failing scored rules:**
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has repo description
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/socketdev/security-research">security-research</a> - 50%</summary>
+
+**Failing scored rules:**
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has repo description
 - Has SECURITY.md
 
 </details>
@@ -154,10 +215,21 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/socketdev/sfw-installer">sfw-installer</a> - 50%</summary>
+<summary><a href="https://github.com/socketdev/sfw-free">sfw-free</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/socketdev/sfw-installer">sfw-installer</a> - 75%</summary>
+
+**Failing scored rules:**
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -167,21 +239,10 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/socketdev/socket-basics">socket-basics</a> - 75%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-
-**Additional check failures:**
-- Has SECURITY.md
-
-</details>
-
-<details>
 <summary><a href="https://github.com/socketdev/socket-btm">socket-btm</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -193,7 +254,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/socketdev/socket-cli">socket-cli</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -205,16 +266,15 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/socketdev/socket-lib">socket-lib</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 </details>
 
 <details>
-<summary><a href="https://github.com/socketdev/socket-mcp">socket-mcp</a> - 50%</summary>
+<summary><a href="https://github.com/socketdev/socket-mcp">socket-mcp</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -224,10 +284,9 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/socketdev/socket-patch">socket-patch</a> - 50%</summary>
+<summary><a href="https://github.com/socketdev/socket-patch">socket-patch</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -239,7 +298,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/socketdev/socket-registry">socket-registry</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 </details>
@@ -248,16 +307,27 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/socketdev/socket-sdk-js">socket-sdk-js</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 </details>
 
 <details>
-<summary><a href="https://github.com/socketdev/vscode-socket-security">vscode-socket-security</a> - 50%</summary>
+<summary><a href="https://github.com/socketdev/socket-utils-js">socket-utils-js</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/socketdev/vscode-socket-security">vscode-socket-security</a> - 75%</summary>
+
+**Failing scored rules:**
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -266,10 +336,9 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/socketdev/workflows">workflows</a> - 50%</summary>
+<summary><a href="https://github.com/socketdev/workflows">workflows</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -280,100 +349,15 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 ### Weak (≤29%)
 
 <details>
-<summary><a href="https://github.com/socketdev/.github">.github</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has README
-- Has LICENSE
-- Has repo description
-- Has activity
-
-</details>
-
-<details>
-<summary><a href="https://github.com/socketdev/firewall-release">firewall-release</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has LICENSE
-- Has repo description
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/socketdev/promise-diagnostics-hook">promise-diagnostics-hook</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has repo description
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/socketdev/security-research">security-research</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has repo description
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/socketdev/sfw-free">sfw-free</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has SECURITY.md
-
-</details>
-
-<details>
 <summary><a href="https://github.com/socketdev/socket-registry-firewall">socket-registry-firewall</a> - 25%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
 **Additional check failures:**
 - Has LICENSE
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/socketdev/socket-utils-js">socket-utils-js</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
 - Has SECURITY.md
 
 </details>

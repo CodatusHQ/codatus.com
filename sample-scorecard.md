@@ -1,7 +1,7 @@
 # Codatus - Repo Standards Scorecard
 
 **Org:** acme-corp<br>
-**Scanned:** 2026-05-01 10:30 UTC<br>
+**Scanned:** 2026-05-01 10:30 UTC (scanner v0.8.4)<br>
 **Repos:** 10 of 15 scanned (3 forks excluded, 1 archived excluded, 1 skipped)
 
 ## Scored rules
@@ -10,7 +10,7 @@
 |------|---------|---------|----------|
 | Has branch protection | 7 | 3 | 70% |
 | Has required reviewers | 5 | 5 | 50% |
-| Requires status checks before merging | 3 | 7 | 30% |
+| Has required checks | 3 | 7 | 30% |
 | Has CODEOWNERS | 3 | 7 | 30% |
 | Has CI workflow | 10 | 0 | 100% |
 
@@ -45,9 +45,9 @@ Checks that the default branch's protection requires at least one approving revi
 
 ---
 
-#### Requires status checks before merging
+#### Has required checks
 
-Checks that the default branch's protection requires at least one status check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (a `required_status_checks` rule), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: edit the default-branch rule (or ruleset), enable "Require status checks to pass before merging", and select at least one check.
+Checks that the default branch's protection requires at least one programmatic check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (rule types `required_status_checks`, `workflows`, `code_scanning`, `code_quality`, or `required_deployments`), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: in Rulesets or Branch protection rules, add any check-passing requirement on the default branch.
 
 ---
 
@@ -114,7 +114,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 **Failing scored rules:**
 - Has required reviewers
-- Requires status checks before merging
+- Has required checks
 
 **Additional check failures:**
 - Has SECURITY.md
@@ -125,7 +125,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/acme-corp/acme-billing">acme-billing</a> - 60%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 </details>
@@ -134,7 +134,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/acme-corp/acme-dashboard">acme-dashboard</a> - 60%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -146,7 +146,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 <summary><a href="https://github.com/acme-corp/acme-mobile">acme-mobile</a> - 60%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -174,7 +174,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 **Failing scored rules:**
 - Has branch protection
 - Has required reviewers
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -191,7 +191,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 **Failing scored rules:**
 - Has branch protection
 - Has required reviewers
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -207,7 +207,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 **Failing scored rules:**
 - Has branch protection
 - Has required reviewers
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 
 **Additional check failures:**

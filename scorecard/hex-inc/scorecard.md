@@ -1,7 +1,7 @@
 # Codatus - Repo Standards Scorecard
 
 **Org:** hex-inc<br>
-**Scanned:** 2026-05-04 14:38 UTC<br>
+**Scanned:** 2026-05-06 21:15 UTC (scanner v0.8.4)<br>
 **Repos:** 17 of 57 scanned (28 forks excluded, 12 archived excluded)
 
 ## Scored rules
@@ -9,11 +9,11 @@
 | Rule | Passing | Failing | Pass rate |
 |------|---------|---------|----------|
 | Has branch protection | 16 | 1 | 94% |
-| Requires status checks before merging | 1 | 16 | 5% |
+| Has required checks | 16 | 1 | 94% |
 | Has CODEOWNERS | 1 | 16 | 5% |
 | Has CI workflow | 4 | 13 | 23% |
 
-**Score: 31/100** (average pass rate across the scored rules above)
+**Score: 54/100** (average pass rate across the scored rules above)
 
 ## Additional checks
 
@@ -38,9 +38,9 @@ Checks that the default branch has a protection rule in place. Detected via any 
 
 ---
 
-#### Requires status checks before merging
+#### Has required checks
 
-Checks that the default branch's protection requires at least one status check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (a `required_status_checks` rule), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: edit the default-branch rule (or ruleset), enable "Require status checks to pass before merging", and select at least one check.
+Checks that the default branch's protection requires at least one programmatic check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (rule types `required_status_checks`, `workflows`, `code_scanning`, `code_quality`, or `required_deployments`), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: in Rulesets or Branch protection rules, add any check-passing requirement on the default branch.
 
 ---
 
@@ -88,13 +88,24 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 
 ## Repository details
 
+### Strong (≥80%)
+
+<details>
+<summary><a href="https://github.com/hex-inc/airflow-provider-hex">airflow-provider-hex</a> - 100%</summary>
+
+**Additional check failures:**
+- Has LICENSE
+- Has repo description
+- Has SECURITY.md
+
+</details>
+
 ### Moderate (30-79%)
 
 <details>
-<summary><a href="https://github.com/hex-inc/action-context-toolkit">action-context-toolkit</a> - 50%</summary>
+<summary><a href="https://github.com/hex-inc/action-context-toolkit">action-context-toolkit</a> - 75%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
 - Has CODEOWNERS
 
 **Additional check failures:**
@@ -103,10 +114,118 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/hex-inc/airflow-provider-hex">airflow-provider-hex</a> - 75%</summary>
+<summary><a href="https://github.com/hex-inc/ai-eng-takehome">ai-eng-takehome</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/hex-inc/backend-coding-interview">backend-coding-interview</a> - 50%</summary>
+
+**Failing scored rules:**
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has LICENSE
+- Has repo description
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/hex-inc/csv-profile-interview">csv-profile-interview</a> - 50%</summary>
+
+**Failing scored rules:**
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has LICENSE
+- Has repo description
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/hex-inc/datasets">datasets</a> - 50%</summary>
+
+**Failing scored rules:**
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has README
+- Has LICENSE
+- Has activity
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/hex-inc/design-eng-interview">design-eng-interview</a> - 50%</summary>
+
+**Failing scored rules:**
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has LICENSE
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/hex-inc/hex-cli">hex-cli</a> - 50%</summary>
+
+**Failing scored rules:**
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has LICENSE
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/hex-inc/hex-cursor-plugin">hex-cursor-plugin</a> - 50%</summary>
+
+**Failing scored rules:**
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has LICENSE
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/hex-inc/hex-skills">hex-skills</a> - 50%</summary>
+
+**Failing scored rules:**
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has LICENSE
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/hex-inc/python-web-interview">python-web-interview</a> - 50%</summary>
+
+**Failing scored rules:**
+- Has CODEOWNERS
+- Has CI workflow
 
 **Additional check failures:**
 - Has LICENSE
@@ -128,13 +247,53 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/hex-inc/typeorm">typeorm</a> - 50%</summary>
+<summary><a href="https://github.com/hex-inc/ts-coding-interview">ts-coding-interview</a> - 50%</summary>
 
 **Failing scored rules:**
-- Requires status checks before merging
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has LICENSE
+- Has repo description
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/hex-inc/typeorm">typeorm</a> - 75%</summary>
+
+**Failing scored rules:**
 - Has CODEOWNERS
 
 **Additional check failures:**
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/hex-inc/web-development-interview-2">web-development-interview-2</a> - 50%</summary>
+
+**Failing scored rules:**
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has LICENSE
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/hex-inc/web-development-interview-template">web-development-interview-template</a> - 50%</summary>
+
+**Failing scored rules:**
+- Has CODEOWNERS
+- Has CI workflow
+
+**Additional check failures:**
+- Has LICENSE
+- Has repo description
 - Has SECURITY.md
 
 </details>
@@ -142,190 +301,16 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 ### Weak (≤29%)
 
 <details>
-<summary><a href="https://github.com/hex-inc/ai-eng-takehome">ai-eng-takehome</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/hex-inc/backend-coding-interview">backend-coding-interview</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has LICENSE
-- Has repo description
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/hex-inc/csv-profile-interview">csv-profile-interview</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has LICENSE
-- Has repo description
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/hex-inc/datasets">datasets</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has README
-- Has LICENSE
-- Has activity
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/hex-inc/design-eng-interview">design-eng-interview</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has LICENSE
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/hex-inc/hex-cli">hex-cli</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has LICENSE
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/hex-inc/hex-cursor-plugin">hex-cursor-plugin</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has LICENSE
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/hex-inc/hex-skills">hex-skills</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has LICENSE
-- Has SECURITY.md
-
-</details>
-
-<details>
 <summary><a href="https://github.com/hex-inc/homebrew-hex-cli">homebrew-hex-cli</a> - 0%</summary>
 
 **Failing scored rules:**
 - Has branch protection
-- Requires status checks before merging
+- Has required checks
 - Has CODEOWNERS
 - Has CI workflow
 
 **Additional check failures:**
 - Has LICENSE
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/hex-inc/python-web-interview">python-web-interview</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has LICENSE
-- Has repo description
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/hex-inc/ts-coding-interview">ts-coding-interview</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has LICENSE
-- Has repo description
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/hex-inc/web-development-interview-2">web-development-interview-2</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has LICENSE
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/hex-inc/web-development-interview-template">web-development-interview-template</a> - 25%</summary>
-
-**Failing scored rules:**
-- Requires status checks before merging
-- Has CODEOWNERS
-- Has CI workflow
-
-**Additional check failures:**
-- Has LICENSE
-- Has repo description
 - Has SECURITY.md
 
 </details>
