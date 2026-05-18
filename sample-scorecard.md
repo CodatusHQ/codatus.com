@@ -1,7 +1,7 @@
 # Codatus - Repo Standards Scorecard
 
 **Org:** acme-corp<br>
-**Scanned:** 2026-05-01 10:30 UTC (scanner v0.8.4)<br>
+**Scanned:** 2026-05-01 10:30 UTC (scanner v0.9.2)<br>
 **Repos:** 10 of 15 scanned (3 forks excluded, 1 archived excluded, 1 skipped)
 
 ## Scored rules
@@ -35,19 +35,19 @@
 
 #### Has branch protection
 
-Checks that the default branch has a protection rule in place. Detected via any of three GitHub APIs: the modern repository rulesets (Settings > Rules > Rulesets), the legacy classic branch-protection rules (Settings > Branches > Branch protection rules), or the `protected` flag on the public branch endpoint. To fix: add a rule for the default branch via either Rulesets or classic Branch protection rules. [GitHub docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches).
+Checks that the default branch enforces pull-request flow: direct pushes are blocked and merges go through a PR. To fix: add a `pull_request` ruleset rule on the default branch, or enable "Require a pull request before merging" in classic branch protection. [GitHub docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches).
 
 ---
 
 #### Has required reviewers
 
-Checks that the default branch's protection requires at least one approving review before a PR can be merged. The reviewer count is read from both modern repository rulesets (a `pull_request` rule with `required_approving_review_count >= 1`) and legacy classic branch protection (the `required_pull_request_reviews.required_approving_review_count` field). To fix: edit the default-branch rule (or ruleset) and enable the pull-request review requirement with at least 1 required reviewer.
+Checks that the default branch requires at least one approving review before merging. Runs only on admin scans: the reviewer count on classic branch protection is admin-only, so non-admin scans skip the rule entirely to avoid misleading partial coverage. To fix: set the required reviewer count to 1 or more on the default-branch rule.
 
 ---
 
 #### Has required checks
 
-Checks that the default branch's protection requires at least one programmatic check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (rule types `required_status_checks`, `workflows`, `code_scanning`, `code_quality`, or `required_deployments`), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: in Rulesets or Branch protection rules, add any check-passing requirement on the default branch.
+Checks that the default branch requires at least one programmatic check (CI status check, workflow run, code scan, deployment, etc.) to pass before merging. To fix: add a check requirement on the default branch via Rulesets or classic branch protection.
 
 ---
 
