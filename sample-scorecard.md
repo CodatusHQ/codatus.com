@@ -1,7 +1,7 @@
 # Codatus - Repo Standards Scorecard
 
 **Org:** acme-corp<br>
-**Scanned:** 2026-05-01 10:30 UTC (scanner v0.9.2)<br>
+**Scanned:** 2026-05-01 10:30 UTC (scanner v0.9.3)<br>
 **Repos:** 10 of 15 scanned (3 forks excluded, 1 archived excluded, 1 skipped)
 
 ## Scored rules
@@ -37,29 +37,23 @@
 
 Checks that the default branch enforces pull-request flow: direct pushes are blocked and merges go through a PR. To fix: add a `pull_request` ruleset rule on the default branch, or enable "Require a pull request before merging" in classic branch protection. [GitHub docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches).
 
----
-
 #### Has required reviewers
 
 Checks that the default branch requires at least one approving review before merging. Runs only on admin scans: the reviewer count on classic branch protection is admin-only, so non-admin scans skip the rule entirely to avoid misleading partial coverage. To fix: set the required reviewer count to 1 or more on the default-branch rule.
-
----
 
 #### Has required checks
 
 Checks that the default branch requires at least one programmatic check (CI status check, workflow run, code scan, deployment, etc.) to pass before merging. To fix: add a check requirement on the default branch via Rulesets or classic branch protection.
 
----
-
 #### Has CODEOWNERS
 
 Checks for a CODEOWNERS file in any of the three locations GitHub honors: the repo root, `.github/`, or `docs/`. To fix: add a CODEOWNERS file in one of those locations mapping paths to GitHub users or teams. [GitHub docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).
 
----
-
 #### Has CI workflow
 
 Checks for a checked-in CI configuration file from any of the major providers: GitHub Actions (any `.yml` or `.yaml` file under `.github/workflows/`), CircleCI (`.circleci/config.yml`), GitLab CI (`.gitlab-ci.yml`), Travis (`.travis.yml`), Buildkite (any file under `.buildkite/`), Azure Pipelines (`azure-pipelines.yml`), or Jenkins (`Jenkinsfile`). Setups whose configuration lives entirely server-side (no checked-in file) are not detected. To fix: add a workflow file for the provider you use. The simplest path on GitHub is a YAML workflow under `.github/workflows/`. [GitHub Actions quickstart](https://docs.github.com/en/actions/quickstart).
+
+---
 
 ### Additional checks
 
@@ -67,25 +61,17 @@ Checks for a checked-in CI configuration file from any of the major providers: G
 
 Checks for a README file at the repository root. The match is case-insensitive and accepts any extension or none, so `README.md`, `README.rst`, `README.txt`, `Readme`, `readme.markdown` all pass. READMEs in subdirectories don't count. To fix: add a top-level README that explains what the project is, how to install it, and how to use it.
 
----
-
 #### Has LICENSE
 
 Checks GitHub's auto-detected license field, which GitHub populates by running the Licensee gem against the repo and recognizing conventionally-named license files: `LICENSE`, `LICENSE.md`, `LICENSE.txt`, `LICENCE`, `COPYING`, `MIT-LICENSE`, and similar variants. Custom-text licenses Licensee can't classify won't pass even if a file is present. To fix: pick a license at [choosealicense.com](https://choosealicense.com) and add it to your repo root using one of the recognized filenames. GitHub will detect it automatically.
-
----
 
 #### Has repo description
 
 Checks that the repository's description field (set via the About panel, shown at the top of the GitHub repo page) is non-empty. To fix: edit the repo's About panel and add a one-line description.
 
----
-
 #### Has activity
 
 Checks that the repository has had a commit (push) within the last 12 months, based on GitHub's `pushed_at` timestamp on the repo. To fix: push a commit, or archive the repository if it's no longer maintained.
-
----
 
 #### Has SECURITY.md
 
