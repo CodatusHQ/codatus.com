@@ -194,6 +194,13 @@ body {
     color: #1a1a1a;
     font-weight: 600;
 }
+.report h4 {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    color: #1a1a1a;
+    font-weight: 600;
+}
 .report p { margin: 4px 0; }
 .report strong { color: #1a1a1a; }
 .report table {
@@ -381,11 +388,18 @@ section > h2 {
     color: #888;
     font-weight: 500;
 }
+.footer-left {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+.footer-left a,
 .footer-right a {
     color: #e89025;
     text-decoration: none;
-    margin-left: 16px;
 }
+.footer-right a { margin-left: 16px; }
+.footer-left a:hover,
 .footer-right a:hover { text-decoration: underline; }
 
 /* Responsive */
