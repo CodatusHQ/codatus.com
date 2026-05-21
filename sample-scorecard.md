@@ -1,7 +1,7 @@
 # Codatus - Repo Standards Scorecard
 
 **Org:** acme-corp<br>
-**Scanned:** 2026-05-01 10:30 UTC (scanner v0.9.3)<br>
+**Scanned:** 2026-05-01 10:30 UTC (scanner v0.9.4)<br>
 **Repos:** 10 of 15 scanned (3 forks excluded, 1 archived excluded, 1 skipped)
 
 ## Scored rules
@@ -35,7 +35,7 @@
 
 #### Has branch protection
 
-Checks that the default branch enforces pull-request flow: direct pushes are blocked and merges go through a PR. To fix: add a `pull_request` ruleset rule on the default branch, or enable "Require a pull request before merging" in classic branch protection. [GitHub docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches).
+Checks that the default branch enforces pull-request flow: direct pushes are blocked and merges go through a PR. On public scans the require-PR sub-setting of classic protection isn't visible (it's admin-gated), so an enabled classic protection passes this rule whether or not it actually requires a PR; the rulesets `pull_request` rule is the precise public signal. To fix: add a `pull_request` ruleset rule on the default branch, or enable "Require a pull request before merging" in classic branch protection. [GitHub docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches).
 
 #### Has required reviewers
 
