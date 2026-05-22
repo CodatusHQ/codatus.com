@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+  Per-post Open Graph share image template.
+  Lives in _og-source/ which Jekyll ignores, so this file is committed for
+  reference but never served.
+
+  To create a custom OG image for a blog post:
+    1. Copy this file (or open it as-is and edit in place if you only need
+       to swap one title).
+    2. Edit the .title text to match the post.
+    3. Open in Chrome, set DevTools device-mode viewport to 1200 x 630.
+    4. Screenshot just the .og element (right-click -> "Capture node screenshot").
+    5. Save the result at /og/<post-slug>.png at the repo root (create /og/
+       directory on first use).
+    6. In the post's frontmatter, add: og_image: /og/<post-slug>.png
+    7. Commit + push. The post's social card will now show this custom image
+       instead of the default /og-image.png.
+
+  Layout notes:
+    - Title block can hold ~3 lines of 48px Inter Bold before colliding with
+      the URL footer at the bottom. Keep titles to <= 3 lines.
+    - URL footer is hardcoded "codatus.com/blog". If a post lives outside
+      /blog/, edit that string per-image.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Codatus OG — blog post template</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    background: #2a2a2a;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+  }
+  .og {
+    width: 1200px;
+    height: 630px;
+    background: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+  }
+  .glow {
+    position: absolute;
+    top: -240px; right: -160px;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(232,160,32,0.18), transparent 60%);
+    pointer-events: none;
+  }
+  .wordmark {
+    color: #E8A020;
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 0.16em;
+    line-height: 1;
+  }
+  .title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.28;
+    max-width: 1000px;
+  }
+  .hairline {
+    margin-top: 20px;
+    width: 100px;
+    height: 3px;
+    background: #E8A020;
+  }
+  .url {
+    position: absolute;
+    left: 100px; bottom: 75px;
+    color: #888888;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1;
+  }
+  .brand { position: absolute; left: 100px; top: 60px; }
+  .title-block { position: absolute; left: 100px; top: 295px; }
+  .info {
+    color: #888;
+    font-size: 14px;
+    margin-top: 20px;
+    font-family: monospace;
+  }
+</style>
+</head>
+<body>
+  <div class="og">
+    <div class="glow"></div>
+
+    <div class="brand">
+      <div class="wordmark">CODATUS</div>
+    </div>
+    <div class="title-block">
+      <div class="title">Measuring repo standards on GitHub</div>
+      <div class="hairline"></div>
+    </div>
+    <div class="url">codatus.com/blog</div>
+  </div>
+  <div class="info">Blog post template · 1200×630 · screenshot the .og element</div>
+</body>
+</html>
