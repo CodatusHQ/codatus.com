@@ -2,6 +2,7 @@
 layout: post
 title: Measuring repo standards on GitHub
 description: How Codatus scores GitHub repos against four standards rules in public-scan mode, plus a fifth that runs only when the scanner is installed on the org.
+og_image: /og/measuring-repo-standards-on-github.png
 ---
 
 GitHub exposes a lot of configuration through its public APIs: branch protection (classic and rulesets), CODEOWNERS files, CI workflow definitions, all visible to anyone willing to make a few API calls. A GitHub App installed on an organization can read more still, including private repos and configuration the public APIs hold back.

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+  Source template for /og-image.png (the site-wide Open Graph share image).
+  Lives in _og-source/ which Jekyll ignores (underscore-prefixed dir not in
+  the collections list), so this file is committed for reference but never
+  served.
+
+  To regenerate the PNG:
+    1. Open this file in Chrome.
+    2. Open DevTools, set device-mode viewport to 1200 x 630.
+    3. Take a screenshot of the .og element (not the full page).
+    4. Save the result over /og-image.png at the repo root.
+    5. Commit + push. GitHub Pages serves the new image within a minute.
+       Twitter / LinkedIn cache aggressively — use their card debuggers to
+       flush the cache when you change the file.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Codatus OG — glow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    background: #2a2a2a;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+  }
+  .og {
+    width: 1200px;
+    height: 630px;
+    background: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+  }
+  .wordmark {
+    color: #E8A020;
+    font-weight: 700;
+    font-size: 130px;
+    letter-spacing: 0.16em;
+    line-height: 1;
+  }
+  .tagline {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1;
+    margin-top: 28px;
+  }
+  .glow-upper-right {
+    position: absolute;
+    top: -240px; right: -160px;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(232,160,32,0.18), transparent 60%);
+    pointer-events: none;
+  }
+  .left {
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .info {
+    color: #888;
+    font-size: 14px;
+    margin-top: 20px;
+    font-family: monospace;
+  }
+</style>
+</head>
+<body>
+  <div class="og">
+    <div class="glow-upper-right"></div>
+    <div class="left">
+      <div class="wordmark">CODATUS</div>
+      <div class="tagline">GitHub repo scorecard for platform teams</div>
+    </div>
+  </div>
+  <div class="info">1200×630 · screenshot the .og element for the production PNG</div>
+</body>
+</html>
