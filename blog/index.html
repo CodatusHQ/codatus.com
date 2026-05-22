@@ -1,16 +1,33 @@
 ---
-layout: default
+layout: content
 title: Blog - Codatus
 description: Writeups from the Codatus team on repo standards, branch-protection patterns, and what we find scanning real-world GitHub orgs.
 ---
-{% include topbar.html %}
+<h1 class="blog-title">Blog</h1>
 
-<div class="container">
-    <article class="content">
-        <h1>Blog</h1>
+{% assign latest = site.posts | first %}
 
-        <p>We shipped the scanner before we shipped the blog.</p>
-
-        <p>First posts coming soon - mostly writeups of what we find scanning real-world GitHub orgs.</p>
-    </article>
+{% if latest %}
+<div class="blog-featured">
+    <span class="blog-featured-flag">Latest</span>
+    <h2><a href="{{ latest.url }}">{{ latest.title }}</a></h2>
+    <p class="blog-featured-summary">{{ latest.description }}</p>
+    <div class="blog-featured-foot">
+        <div class="blog-featured-date">{{ latest.date | date: "%B %-d, %Y" }}</div>
+        <a href="{{ latest.url }}" class="blog-read-cta">Read the post →</a>
+    </div>
 </div>
+{% endif %}
+
+{% if site.posts.size > 1 %}
+<div class="blog-older-label">Earlier posts</div>
+{% for post in site.posts offset:1 %}
+<div class="blog-post-row">
+    <div class="blog-row-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+    <div>
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p>{{ post.description }}</p>
+    </div>
+</div>
+{% endfor %}
+{% endif %}
