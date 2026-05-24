@@ -1,6 +1,6 @@
 # Codatus - Repo Standards Scorecard
 
-**Org:** socketdev<br>
+**Org:** SocketDev<br>
 **Scanned:** 2026-05-06 21:13 UTC (scanner v0.8.4)<br>
 **Repos:** 24 of 44 scanned (3 forks excluded, 17 archived excluded)
 

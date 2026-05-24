@@ -1,6 +1,6 @@
 # Codatus - Repo Standards Scorecard
 
-**Org:** stedi<br>
+**Org:** Stedi<br>
 **Scanned:** 2026-05-06 21:19 UTC (scanner v0.8.4)<br>
 **Repos:** 3 of 4 scanned (1 forks excluded)
 
