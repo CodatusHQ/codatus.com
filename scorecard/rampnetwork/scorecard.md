@@ -1,6 +1,6 @@
 # Codatus - Repo Standards Scorecard
 
-**Org:** rampnetwork<br>
+**Org:** RampNetwork<br>
 **Scanned:** 2026-05-06 21:13 UTC (scanner v0.8.4)<br>
 **Repos:** 13 of 23 scanned (9 forks excluded, 1 archived excluded)
 

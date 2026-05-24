@@ -1,6 +1,6 @@
 # Codatus - Repo Standards Scorecard
 
-**Org:** use-tusk<br>
+**Org:** Use-Tusk<br>
 **Scanned:** 2026-05-06 21:18 UTC (scanner v0.8.4)<br>
 **Repos:** 18 of 20 scanned (1 forks excluded, 1 archived excluded)
 
