@@ -1,6 +1,6 @@
 # Codatus - Repo Standards Scorecard
 
-**Org:** dopplerhq<br>
+**Org:** DopplerHQ<br>
 **Scanned:** 2026-05-19 07:33 UTC (scanner v0.9.4)<br>
 **Repos:** 18 of 29 scanned (2 forks excluded, 9 archived excluded)
 
