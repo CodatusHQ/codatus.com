@@ -1,6 +1,6 @@
 # Codatus - Repo Standards Scorecard
 
-**Org:** supernova-studio<br>
+**Org:** Supernova-Studio<br>
 **Scanned:** 2026-05-19 10:02 UTC (scanner v0.9.4)<br>
 **Repos:** 41 of 65 scanned (7 forks excluded, 17 archived excluded)
 

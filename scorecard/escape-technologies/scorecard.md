@@ -1,6 +1,6 @@
 # Codatus - Repo Standards Scorecard
 
-**Org:** escape-technologies<br>
+**Org:** Escape-Technologies<br>
 **Scanned:** 2026-05-19 07:35 UTC (scanner v0.9.4)<br>
 **Repos:** 25 of 34 scanned (8 forks excluded, 1 archived excluded)
 

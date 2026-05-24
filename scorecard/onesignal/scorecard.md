@@ -1,6 +1,6 @@
 # Codatus - Repo Standards Scorecard
 
-**Org:** onesignal<br>
+**Org:** OneSignal<br>
 **Scanned:** 2026-05-19 08:46 UTC (scanner v0.9.4)<br>
 **Repos:** 72 of 145 scanned (61 forks excluded, 12 archived excluded)
 

@@ -1,6 +1,6 @@
 # Codatus - Repo Standards Scorecard
 
-**Org:** berriai<br>
+**Org:** BerriAI<br>
 **Scanned:** 2026-05-19 08:31 UTC (scanner v0.9.4)<br>
 **Repos:** 43 of 52 scanned (9 forks excluded)
 

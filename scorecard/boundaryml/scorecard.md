@@ -1,6 +1,6 @@
 # Codatus - Repo Standards Scorecard
 
-**Org:** boundaryml<br>
+**Org:** BoundaryML<br>
 **Scanned:** 2026-05-18 20:30 UTC (scanner v0.9.4)<br>
 **Repos:** 40 of 55 scanned (13 forks excluded, 2 archived excluded)
 

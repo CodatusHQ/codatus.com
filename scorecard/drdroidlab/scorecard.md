@@ -1,6 +1,6 @@
 # Codatus - Repo Standards Scorecard
 
-**Org:** drdroidlab<br>
+**Org:** DrDroidLab<br>
 **Scanned:** 2026-05-19 07:34 UTC (scanner v0.9.4)<br>
 **Repos:** 36 of 48 scanned (12 forks excluded)
 

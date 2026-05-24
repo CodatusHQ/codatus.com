@@ -1,6 +1,6 @@
 # Codatus - Repo Standards Scorecard
 
-**Org:** revenuecat<br>
+**Org:** RevenueCat<br>
 **Scanned:** 2026-05-19 09:52 UTC (scanner v0.9.4)<br>
 **Repos:** 46 of 72 scanned (21 forks excluded, 4 archived excluded, 1 skipped)
 

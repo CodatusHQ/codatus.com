@@ -1,6 +1,6 @@
 # Codatus - Repo Standards Scorecard
 
-**Org:** signoz<br>
+**Org:** SigNoz<br>
 **Scanned:** 2026-05-19 09:57 UTC (scanner v0.9.4)<br>
 **Repos:** 80 of 153 scanned (59 forks excluded, 11 archived excluded, 3 skipped)
 

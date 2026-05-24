@@ -1,6 +1,6 @@
 # Codatus - Repo Standards Scorecard
 
-**Org:** infisical<br>
+**Org:** Infisical<br>
 **Scanned:** 2026-05-19 08:26 UTC (scanner v0.9.4)<br>
 **Repos:** 52 of 72 scanned (17 forks excluded, 3 archived excluded)
 
