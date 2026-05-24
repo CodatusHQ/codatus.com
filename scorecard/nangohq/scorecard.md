@@ -1,19 +1,19 @@
 # Codatus - Repo Standards Scorecard
 
 **Org:** NangoHQ<br>
-**Scanned:** 2026-05-06 21:15 UTC (scanner v0.8.4)<br>
+**Scanned:** 2026-05-19 08:41 UTC (scanner v0.9.4)<br>
 **Repos:** 15 of 20 scanned (2 forks excluded, 3 archived excluded)
 
 ## Scored rules
 
 | Rule | Passing | Failing | Pass rate |
 |------|---------|---------|----------|
-| Has branch protection | 4 | 11 | 26% |
+| Has branch protection | 3 | 12 | 20% |
 | Has required checks | 2 | 13 | 13% |
 | Has CODEOWNERS | 0 | 15 | 0% |
 | Has CI workflow | 5 | 10 | 33% |
 
-**Score: 18/100** (average pass rate across the scored rules above)
+**Score: 16/100** (average pass rate across the scored rules above)
 
 ## Additional checks
 
@@ -34,25 +34,21 @@
 
 #### Has branch protection
 
-Checks that the default branch has a protection rule in place. Detected via any of three GitHub APIs: the modern repository rulesets (Settings > Rules > Rulesets), the legacy classic branch-protection rules (Settings > Branches > Branch protection rules), or the `protected` flag on the public branch endpoint. To fix: add a rule for the default branch via either Rulesets or classic Branch protection rules. [GitHub docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches).
-
----
+Checks that the default branch enforces pull-request flow: direct pushes are blocked and merges go through a PR. On public scans the require-PR sub-setting of classic protection isn't visible (it's admin-gated), so an enabled classic protection passes this rule whether or not it actually requires a PR; the rulesets `pull_request` rule is the precise public signal. To fix: add a `pull_request` ruleset rule on the default branch, or enable "Require a pull request before merging" in classic branch protection. [GitHub docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches).
 
 #### Has required checks
 
-Checks that the default branch's protection requires at least one programmatic check to pass before a PR can be merged. Detected from any of three sources: modern repository rulesets (rule types `required_status_checks`, `workflows`, `code_scanning`, `code_quality`, or `required_deployments`), legacy classic branch protection (`required_status_checks.contexts`), or the public branch endpoint's `protection.required_status_checks.contexts` field. To fix: in Rulesets or Branch protection rules, add any check-passing requirement on the default branch.
-
----
+Checks that the default branch requires at least one programmatic check (CI status check, workflow run, code scan, deployment, etc.) to pass before merging. To fix: add a check requirement on the default branch via Rulesets or classic branch protection.
 
 #### Has CODEOWNERS
 
 Checks for a CODEOWNERS file in any of the three locations GitHub honors: the repo root, `.github/`, or `docs/`. To fix: add a CODEOWNERS file in one of those locations mapping paths to GitHub users or teams. [GitHub docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).
 
----
-
 #### Has CI workflow
 
 Checks for a checked-in CI configuration file from any of the major providers: GitHub Actions (any `.yml` or `.yaml` file under `.github/workflows/`), CircleCI (`.circleci/config.yml`), GitLab CI (`.gitlab-ci.yml`), Travis (`.travis.yml`), Buildkite (any file under `.buildkite/`), Azure Pipelines (`azure-pipelines.yml`), or Jenkins (`Jenkinsfile`). Setups whose configuration lives entirely server-side (no checked-in file) are not detected. To fix: add a workflow file for the provider you use. The simplest path on GitHub is a YAML workflow under `.github/workflows/`. [GitHub Actions quickstart](https://docs.github.com/en/actions/quickstart).
+
+---
 
 ### Additional checks
 
@@ -60,25 +56,17 @@ Checks for a checked-in CI configuration file from any of the major providers: G
 
 Checks for a README file at the repository root. The match is case-insensitive and accepts any extension or none, so `README.md`, `README.rst`, `README.txt`, `Readme`, `readme.markdown` all pass. READMEs in subdirectories don't count. To fix: add a top-level README that explains what the project is, how to install it, and how to use it.
 
----
-
 #### Has LICENSE
 
 Checks GitHub's auto-detected license field, which GitHub populates by running the Licensee gem against the repo and recognizing conventionally-named license files: `LICENSE`, `LICENSE.md`, `LICENSE.txt`, `LICENCE`, `COPYING`, `MIT-LICENSE`, and similar variants. Custom-text licenses Licensee can't classify won't pass even if a file is present. To fix: pick a license at [choosealicense.com](https://choosealicense.com) and add it to your repo root using one of the recognized filenames. GitHub will detect it automatically.
-
----
 
 #### Has repo description
 
 Checks that the repository's description field (set via the About panel, shown at the top of the GitHub repo page) is non-empty. To fix: edit the repo's About panel and add a one-line description.
 
----
-
 #### Has activity
 
 Checks that the repository has had a commit (push) within the last 12 months, based on GitHub's `pushed_at` timestamp on the repo. To fix: push a commit, or archive the repository if it's no longer maintained.
-
----
 
 #### Has SECURITY.md
 
@@ -91,7 +79,19 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 ### Moderate (30-79%)
 
 <details>
-<summary><a href="https://github.com/NangoHQ/integration-templates">integration-templates</a> - 75%</summary>
+<summary><a href="https://github.com/nangohq/integration-templates">integration-templates</a> - 50%</summary>
+
+**Failing scored rules:**
+- Has branch protection
+- Has CODEOWNERS
+
+**Additional check failures:**
+- Has SECURITY.md
+
+</details>
+
+<details>
+<summary><a href="https://github.com/nangohq/nango">nango</a> - 75%</summary>
 
 **Failing scored rules:**
 - Has CODEOWNERS
@@ -102,18 +102,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/NangoHQ/nango">nango</a> - 75%</summary>
-
-**Failing scored rules:**
-- Has CODEOWNERS
-
-**Additional check failures:**
-- Has SECURITY.md
-
-</details>
-
-<details>
-<summary><a href="https://github.com/NangoHQ/nango-helm-charts">nango-helm-charts</a> - 50%</summary>
+<summary><a href="https://github.com/nangohq/nango-helm-charts">nango-helm-charts</a> - 50%</summary>
 
 **Failing scored rules:**
 - Has required checks
@@ -128,7 +117,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 ### Weak (≤29%)
 
 <details>
-<summary><a href="https://github.com/NangoHQ/ai-agent-demo">ai-agent-demo</a> - 0%</summary>
+<summary><a href="https://github.com/nangohq/ai-agent-demo">ai-agent-demo</a> - 0%</summary>
 
 **Failing scored rules:**
 - Has branch protection
@@ -144,7 +133,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/NangoHQ/ai-ide-prompts">ai-ide-prompts</a> - 0%</summary>
+<summary><a href="https://github.com/nangohq/ai-ide-prompts">ai-ide-prompts</a> - 0%</summary>
 
 **Failing scored rules:**
 - Has branch protection
@@ -159,7 +148,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/NangoHQ/blog-demos">blog-demos</a> - 0%</summary>
+<summary><a href="https://github.com/nangohq/blog-demos">blog-demos</a> - 0%</summary>
 
 **Failing scored rules:**
 - Has branch protection
@@ -175,7 +164,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/NangoHQ/eslint-config">eslint-config</a> - 0%</summary>
+<summary><a href="https://github.com/nangohq/eslint-config">eslint-config</a> - 0%</summary>
 
 **Failing scored rules:**
 - Has branch protection
@@ -191,7 +180,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/NangoHQ/eslint-plugin-custom-integrations-linting">eslint-plugin-custom-integrations-linting</a> - 25%</summary>
+<summary><a href="https://github.com/nangohq/eslint-plugin-custom-integrations-linting">eslint-plugin-custom-integrations-linting</a> - 25%</summary>
 
 **Failing scored rules:**
 - Has branch protection
@@ -207,7 +196,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/NangoHQ/function-builder">function-builder</a> - 0%</summary>
+<summary><a href="https://github.com/nangohq/function-builder">function-builder</a> - 0%</summary>
 
 **Failing scored rules:**
 - Has branch protection
@@ -222,7 +211,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/NangoHQ/integrations-importer">integrations-importer</a> - 25%</summary>
+<summary><a href="https://github.com/nangohq/integrations-importer">integrations-importer</a> - 25%</summary>
 
 **Failing scored rules:**
 - Has branch protection
@@ -236,7 +225,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/NangoHQ/interactive-demo">interactive-demo</a> - 0%</summary>
+<summary><a href="https://github.com/nangohq/interactive-demo">interactive-demo</a> - 0%</summary>
 
 **Failing scored rules:**
 - Has branch protection
@@ -252,7 +241,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/NangoHQ/nango-mcp-client-example">nango-mcp-client-example</a> - 0%</summary>
+<summary><a href="https://github.com/nangohq/nango-mcp-client-example">nango-mcp-client-example</a> - 0%</summary>
 
 **Failing scored rules:**
 - Has branch protection
@@ -268,7 +257,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/NangoHQ/nangoctl">nangoctl</a> - 0%</summary>
+<summary><a href="https://github.com/nangohq/nangoctl">nangoctl</a> - 0%</summary>
 
 **Failing scored rules:**
 - Has branch protection
@@ -282,7 +271,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/NangoHQ/sample-app">sample-app</a> - 0%</summary>
+<summary><a href="https://github.com/nangohq/sample-app">sample-app</a> - 0%</summary>
 
 **Failing scored rules:**
 - Has branch protection
@@ -297,7 +286,7 @@ Checks for a SECURITY.md file in any of the three locations GitHub recognizes fo
 </details>
 
 <details>
-<summary><a href="https://github.com/NangoHQ/skills">skills</a> - 25%</summary>
+<summary><a href="https://github.com/nangohq/skills">skills</a> - 25%</summary>
 
 **Failing scored rules:**
 - Has required checks
