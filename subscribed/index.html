@@ -1,0 +1,57 @@
+---
+layout: content
+title: Welcome aboard
+description: You're subscribed to Codatus updates. Here's the most recent post.
+---
+<style>
+.subscribed-page .blog-title { margin-bottom: 16px; }
+
+.subscribed-intro {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+    max-width: 600px;
+    margin: 0 0 18px;
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.subscribed-card {
+    display: block;
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-left: 3px solid #E8A020;
+    border-radius: 0 6px 6px 0;
+    padding: 20px 22px;
+    text-decoration: none;
+    margin: 0 0 12px;
+    transition: border-color 0.15s, background 0.15s;
+}
+.subscribed-card:hover { background: #f4f4f4; border-color: #b07800; border-left-color: #E8A020; }
+.subscribed-card-title { font-size: 17px; font-weight: 700; color: #1a1a1a; line-height: 1.35; margin-bottom: 8px; letter-spacing: -0.005em; }
+.subscribed-card-desc { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 14px; }
+.subscribed-card-foot { display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; color: #888; }
+.subscribed-card-cta { color: #b07800; font-weight: 600; }
+</style>
+
+<div class="subscribed-page">
+
+<h1 class="blog-title">Welcome aboard</h1>
+
+{% assign latest = site.posts | first %}
+
+{% if latest %}
+<p class="subscribed-intro">The most recent post is below:</p>
+
+<a class="subscribed-card" href="{{ latest.url }}">
+  <div class="subscribed-card-title">{{ latest.title }}</div>
+  <div class="subscribed-card-desc">{{ latest.description }}</div>
+  <div class="subscribed-card-foot"><span>{{ latest.date | date: "%B %-d, %Y" }}</span><span class="subscribed-card-cta">Read &rarr;</span></div>
+</a>
+{% endif %}
+
+</div>
