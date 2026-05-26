@@ -47,4 +47,4 @@ A repository passes or fails each rule, and lands in one of three buckets: Stron
 
 The scan also reports five additional checks per repo that don't affect the score: whether a README exists, whether a license is declared, whether the repo has a description, whether it's been pushed to in the last year, and whether a SECURITY.md file is present. These appear on the per-repo scorecard for context.
 
-The next post takes a scan across 128 YC-backed dev tools companies, on Codatus v0.9.4, and walks through what falls out.
+[The next post](/blog/only-2-of-128-yc-backed-dev-tools-companies-block-unchecked-merges/) takes a scan across 128 YC-backed dev tools companies, on Codatus v0.9.4, and walks through what falls out.

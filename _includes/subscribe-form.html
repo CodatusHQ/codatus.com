@@ -1,0 +1,96 @@
+{%- comment -%}
+  Subscribe form (Kit / formerly ConvertKit). Used in two variants:
+    variant="post" - integrated into blog post body (D3 design)
+    variant="list" - soft tinted card at bottom of blog list (BL1 design)
+  Parameters:
+    variant - "post" or "list" (default: "post")
+    heading - heading text (default: "Follow Codatus by email")
+    body - body text (default: blog-post copy)
+  Submits via fetch (Accept: application/json) to Kit's form-action URL; the
+  form's tag is configured on Kit's side via the form settings, not posted.
+  Status area is always reserved so the form does not jump on submit.
+{%- endcomment -%}
+{%- assign variant = include.variant | default: "post" -%}
+{%- assign heading = include.heading | default: "Follow Codatus by email" -%}
+{%- assign body = include.body | default: "New posts, scanner updates, and what we're learning along the way. No filler." -%}
+{%- if variant == "list" -%}
+  {%- assign class_mod = "bd-form--list" -%}
+  {%- assign heading_tag = "h3" -%}
+{%- else -%}
+  {%- assign class_mod = "bd-form--post" -%}
+  {%- assign heading_tag = "h2" -%}
+{%- endif -%}
+<form class="bd-form {{ class_mod }}" novalidate>
+  <{{ heading_tag }}>{{ heading }}</{{ heading_tag }}>
+  <p class="bd-body">{{ body }}</p>
+  <div class="bd-form-cell">
+    <div class="bd-row">
+      <input type="email" name="email_address" placeholder="you@example.com" required>
+      <button type="submit">Subscribe</button>
+    </div>
+    <div class="bd-status" aria-live="polite"></div>
+  </div>
+</form>
+
+<script>
+(function () {
+  var forms = document.querySelectorAll('.bd-form');
+  forms.forEach(function (form) {
+    if (form.dataset.bdInit) return;
+    form.dataset.bdInit = '1';
+    var input = form.querySelector('input[name="email_address"]');
+    var status = form.querySelector('.bd-status');
+    function resetToIdle() {
+      form.classList.remove('is-busy', 'is-done');
+      status.textContent = '';
+      status.className = 'bd-status';
+    }
+    input.addEventListener('input', function () {
+      input.removeAttribute('aria-invalid');
+    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = input.value.trim();
+      if (!email || email.indexOf('@') < 0) {
+        input.setAttribute('aria-invalid', 'true');
+        input.focus();
+        return;
+      }
+      // Build URLSearchParams BEFORE the row hides - we don't disable inputs
+      // (CSS visibility:hidden via the class change handles UX) but capture
+      // form data eagerly to avoid any timing ambiguity.
+      var fd = new URLSearchParams(new FormData(form));
+      form.classList.add('is-busy');
+      status.textContent = 'Subscribing...';
+      status.className = 'bd-status';
+      fetch('https://app.convertkit.com/forms/9484633/subscriptions', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: fd,
+      })
+        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, body: j }; }); })
+        .then(function (res) {
+          if (res.ok && res.body && res.body.status === 'success') {
+            form.classList.remove('is-busy');
+            form.classList.add('is-done');
+            status.textContent = 'Thanks. Check your inbox to confirm.';
+            status.className = 'bd-status success';
+            input.value = '';
+          } else {
+            throw new Error('subscription failed');
+          }
+        })
+        .catch(function () {
+          status.innerHTML = 'Something went wrong. <a href="#" class="bd-retry">Try again</a> or email <a href="mailto:hello@codatus.com">hello@codatus.com</a>.';
+          status.className = 'bd-status error';
+          var retry = status.querySelector('.bd-retry');
+          if (retry) retry.addEventListener('click', function (ev) {
+            ev.preventDefault();
+            resetToIdle();
+            input.focus();
+          });
+        });
+    });
+  });
+})();
+</script>

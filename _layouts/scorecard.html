@@ -20,8 +20,8 @@ layout: default
 
 <section class="scorecard-cta">
     <div class="scorecard-cta-inner">
-        <a class="btn btn-primary btn-large" href="https://github.com/apps/codatus-scanner/installations/new" data-goatcounter-click="install-clicked-scorecard" data-goatcounter-title="Install on GitHub (from {{ page.org }} scorecard)">Install Codatus on GitHub</a>
-        <p>Install on any GitHub organization to run a private scan that includes private repos.</p>
+        <a class="btn btn-primary btn-large" href="https://github.com/apps/codatus-scanner/installations/new" data-goatcounter-click="install-clicked-scorecard" data-goatcounter-title="Install on GitHub (from {{ page.org }} scorecard)">Scan your GitHub org</a>
+        <p>Installs as a GitHub App and runs a private scan that includes private repos.</p>
     </div>
 </section>
 
@@ -31,7 +31,7 @@ layout: default
         var div = document.getElementById('scorecard-report');
         // The .md sits next to this index.html on disk; relative URL works
         // for both /scorecard/Org/ and /scorecard/Org/index.html.
-        fetch('scorecard.md')
+        fetch('scorecard.md?v={{ site.github.build_revision | default: site.time | date: "%s" }}')
             .then(function (r) {
                 if (!r.ok) throw new Error('fetch failed: ' + r.status);
                 return r.text();

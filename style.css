@@ -775,3 +775,104 @@ body.home .container { padding: 16px 24px 12px; }
 @media (max-width: 720px) {
     .blog-post-masthead h1 { font-size: 28px; }
 }
+
+/* --- Subscribe form (Kit) --- */
+/* Shared base */
+.bd-form p.bd-body { font-size: 14.5px; color: #555; line-height: 1.55; margin: 0 0 16px; }
+/* The row and status share the same grid cell; only one is visible at a time
+   so the form does not jump on submit and no whitespace is reserved below. */
+.bd-form-cell {
+    display: grid;
+    grid-template-areas: "cell";
+    max-width: 460px;
+}
+.bd-row, .bd-status {
+    grid-area: cell;
+}
+.bd-row { display: flex; gap: 8px; }
+.bd-row input[type=email] {
+    flex: 1;
+    min-width: 0;
+    padding: 9px 12px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font: inherit;
+    font-size: 14px;
+    background: #fff;
+}
+.bd-row input[type=email]:focus {
+    outline: none;
+    border-color: #b07800;
+    box-shadow: 0 0 0 3px rgba(176,120,0,0.10);
+}
+.bd-row input[type=email][aria-invalid="true"] {
+    border-color: #b00020;
+    box-shadow: 0 0 0 3px rgba(176,0,32,0.10);
+}
+.bd-row button {
+    background: #E8A020;
+    color: #1a1a1a;
+    border: none;
+    padding: 0 22px;
+    border-radius: 2px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    min-width: 110px;
+}
+.bd-row button:hover { background: #f3b234; }
+.bd-status {
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    font-size: 13.5px;
+    color: #333;
+    line-height: 1.4;
+}
+.bd-status a { color: #b07800; text-decoration: none; border-bottom: 1px solid rgba(176,120,0,0.3); }
+.bd-status a:hover { border-bottom-color: #b07800; }
+.bd-status.success { color: #2c7a2c; }
+.bd-status.error { color: #b00020; }
+.bd-status.error a { color: #b00020; border-bottom-color: rgba(176,0,32,0.3); }
+.bd-status.error a:hover { border-bottom-color: #b00020; }
+/* On submit or completion, hide the row and reveal the status in place. */
+.bd-form.is-busy .bd-row,
+.bd-form.is-done .bd-row { visibility: hidden; }
+.bd-form.is-busy .bd-status,
+.bd-form.is-done .bd-status { visibility: visible; }
+
+/* Post variant (D3) - integrated into blog post body, no card, hairline above */
+.bd-form--post { margin: 36px 0 12px; padding-top: 36px; border-top: 1px solid #eee; }
+.bd-form--post h2 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 8px;
+    color: #1a1a1a;
+    letter-spacing: -0.01em;
+}
+
+/* List variant (BL1) - soft tinted card at bottom of blog list */
+.bd-form--list {
+    margin: 32px 0 12px;
+    padding: 24px;
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+.bd-form--list h3 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 0 0 8px;
+    color: #1a1a1a;
+    letter-spacing: 0;
+}
+
+@media (max-width: 540px) {
+    .bd-form-cell { max-width: 100%; }
+    .bd-row { flex-direction: column; }
+    .bd-row button { padding: 11px; }
+}
