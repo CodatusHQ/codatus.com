@@ -5,6 +5,8 @@ description: Of 128 YC-backed dev tools companies, 44 enable branch protection b
 og_image: /og/only-2-of-128-yc-backed-dev-tools-companies-block-unchecked-merges.png
 ---
 
+*Update, June 2026: We've changed direction since writing this. Every rule below checks whether a control exists at scan time; what we're building now starts where that leaves off - when a setting changes after the scan. To see whether a change like that is worth watching for, we tested the most visible one: [when a private repo turns public, who actually notices?](https://codatus.com/blog/we-leaked-75-aws-keys-to-see-who-watches-public-repos/)*
+
 We scored 6,195 public GitHub repos at 128 YC-backed dev tools companies on four rules. The median scored 21 out of 100; no company cleared 80. Apollo took the top spot at 71.
 
 But the most interesting thing isn't the scores. It's the pattern in the data: of the 44 companies that enable branch protection on most of their repos, only 2 block unchecked merges.
@@ -353,7 +355,3 @@ That leaves 42 in the bottom-right. They enable branch protection on most of the
 The bottom-left holds the remaining 84 companies. Branch protection isn't enabled on most of their repos, so there's no workflow to gate.
 
 The pattern is clear across the cohort: most companies have either no gate or a workflow that doesn't enforce anything.
-
-## See where you land
-
-The 128 companies in the leaderboard are public-scan results. [Install Codatus on your own GitHub org](https://github.com/apps/codatus-scanner/installations/new) for a full scan, private repos included.

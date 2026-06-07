@@ -1,9 +1,11 @@
 ---
 layout: post
 title: Measuring repo standards on GitHub
-description: How Codatus scores GitHub repos against four standards rules in public-scan mode, plus a fifth that runs only when the scanner is installed on the org.
+description: "The four rules behind our scan of 128 YC-backed dev tools companies: what each measures, how GitHub exposes the data, and where public-scan mode hits its limits."
 og_image: /og/measuring-repo-standards-on-github.png
 ---
+
+*Update, June 2026: We've changed direction since writing this. Every rule below checks whether a control exists at scan time; what we're building now starts where that leaves off - when a setting changes after the scan. To see whether a change like that is worth watching for, we tested the most visible one: [when a private repo turns public, who actually notices?](https://codatus.com/blog/we-leaked-75-aws-keys-to-see-who-watches-public-repos/)*
 
 GitHub exposes a lot of configuration through its public APIs: branch protection (classic and rulesets), CODEOWNERS files, CI workflow definitions, all visible to anyone willing to make a few API calls. A GitHub App installed on an organization can read more still, including private repos and configuration the public APIs hold back.
 
