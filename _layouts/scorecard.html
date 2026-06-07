@@ -3,6 +3,12 @@ layout: default
 ---
 {% include topbar.html %}
 
+<div class="legacy-banner">
+    <div class="legacy-banner-inner">
+        This is an earlier Codatus project. <a href="/">See what we're building now &rarr;</a>
+    </div>
+</div>
+
 <section class="scorecard-title">
     <div class="scorecard-title-inner">
         <h1>Codatus scorecard for <a class="scorecard-org-link" href="https://github.com/{{ page.org }}" rel="noopener" target="_blank">{{ page.org }}</a></h1>
@@ -15,13 +21,6 @@ layout: default
         <div class="report-card">
             <div class="report" id="scorecard-report">Loading scorecard…</div>
         </div>
-    </div>
-</section>
-
-<section class="scorecard-cta">
-    <div class="scorecard-cta-inner">
-        <a class="btn btn-primary btn-large" href="https://github.com/apps/codatus-scanner/installations/new" data-goatcounter-click="install-clicked-scorecard" data-goatcounter-title="Install on GitHub (from {{ page.org }} scorecard)">Scan your GitHub org</a>
-        <p>Installs as a GitHub App and runs a private scan that includes private repos.</p>
     </div>
 </section>
 

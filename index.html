@@ -1,119 +1,124 @@
 ---
 layout: default
 body_class: home
-title: Codatus - GitHub repo scorecard for platform teams
-description: "See how every repo in your org stacks up: branch protection, code ownership, CI, documentation. One install, one scorecard, under a minute."
+title: Codatus - know the moment a GitHub control changes
+description: "Codatus watches your GitHub org for silent control changes: repos going public, branch protection removed, checks or reviewers dropped, bypass actors added, secret scanning disabled. It alerts the moment one happens."
 ---
-<div class="dark-block">
-    {% include topbar.html %}
-    <section class="hero">
-            <h1>GitHub repo scorecard<br><span class="accent">for platform teams.</span></h1>
-            <p class="lede">See how every repo in your org stacks up: branch protection, code ownership, CI, documentation. One install, one scorecard, under a minute.</p>
-            <div class="hero-actions">
-                <a class="btn btn-primary btn-large" href="https://github.com/apps/codatus-scanner/installations/new" data-goatcounter-click="install-clicked" data-goatcounter-title="Install on GitHub (hero)">Install on GitHub</a>
-                <a class="btn btn-secondary btn-large" href="#sample" data-goatcounter-click="sample-clicked" data-goatcounter-title="See a sample scorecard">See a sample scorecard</a>
-            </div>
-            <p class="hero-note">Not an admin? GitHub will ask your admin to approve. We'll email you the moment the scan is ready.</p>
+
+    <!-- ===== Hero (dark) ===== -->
+    <div class="dark-block">
+        {% include topbar.html %}
+
+        <section class="hero lp-hero">
+            <h1>A repo goes public. The internet notices in 6 minutes.<br><span class="accent">You don't.</span></h1>
+            <p class="lede">Codatus watches the controls on your GitHub org: visibility, branch protection, required checks, reviewers, bypass actors, secret scanning. It alerts the moment one changes.</p>
+
+            {% include subscribe-form.html variant="post" heading="" body="" button="Reserve early access" form_id="9533751" %}
+            <p class="hero-note">Launching at $99/month, early users locked in at that rate.</p>
         </section>
     </div>
 
-    <section class="trust-section">
-        <div class="trust-inner">
-            <h2>Built for trust</h2>
-            <p class="trust-lede">Codatus reads metadata only - your source code is never read or stored. The <a href="https://github.com/CodatusHQ/scanner">scanner is open source</a>, and each GitHub permission below has a single, narrow purpose.</p>
-
-            <div class="perm-row">
-                <div class="perm-card">
-                    <h3>Metadata</h3>
-                    <span class="perm-tag-line">Read</span>
-                    <p class="perm-what">Repository names, descriptions, branches.</p>
-                </div>
-                <div class="perm-card">
-                    <h3>Contents</h3>
-                    <span class="perm-tag-line">Read</span>
-                    <p class="perm-what">File names and sizes - never the file contents.</p>
-                </div>
-                <div class="perm-card">
-                    <h3>Administration</h3>
-                    <span class="perm-tag-line">Read</span>
-                    <p class="perm-what">Branch protection rules, required reviewers, status check settings.</p>
-                </div>
-                <div class="perm-card">
-                    <h3>Issues</h3>
-                    <span class="perm-tag-line">Write</span>
-                    <p class="perm-what">Nothing on its own - only writes when you click "Create issue".</p>
-                </div>
+    <div class="ev-section">
+        <div class="ev-wrap">
+            <div class="ev-panel">
+                <a href="/blog/we-leaked-75-aws-keys-to-see-who-watches-public-repos/">Where does the 6 minutes come from? We flipped 75 repos public with AWS keys inside. <span class="arrow">&rarr;</span></a>
             </div>
         </div>
+    </div>
+
+    <!-- ===== The blind spot ===== -->
+    <section class="lp-section blind-spot">
+        <span class="lp-eyebrow">The blind spot</span>
+        <h2 class="lp-h2">GitHub logs the change. It tells no one.</h2>
+        <p>GitHub records every one of these changes in its audit log, and notifies no one. A repo can go public, branch protection can come off, a required check can be dropped, all <strong>silently</strong>. Nothing lands in your inbox.</p>
+        <p>The enterprise tools that catch this exist. But they assume a security team to run them, and a budget to match. Free tools catch pieces of this.</p>
+        <p>But for the team too big to leave its repos unwatched and too small for enterprise security tooling, nothing watches the whole surface, turnkey.</p>
     </section>
 
-    <section class="sample-tinted-band">
-        <div class="sample-tinted-inner">
-            <div class="report-card" id="sample">
-                <div class="card-lead">
-                    <p>Here's what a scorecard looks like. Below is a sample Codatus generated for a fictional organization, <strong>acme-corp</strong>, with 15 repositories (3 forks and 1 archived repo filtered out before scanning).</p>
-                </div>
-                <div class="report" id="sample-report">Loading sample...</div>
-            </div>
-
-            <div class="after-report">
-                <p>Run a scan like this for your organization:</p>
-                <a class="btn btn-primary btn-large" href="https://github.com/apps/codatus-scanner/installations/new" style="color:#1a1a1a" data-goatcounter-click="install-clicked" data-goatcounter-title="Install on GitHub (after sample scorecard)">Install on GitHub</a>
-            </div>
-        </div>
-    </section>
-
-    <div class="container">
-        <section id="how">
-            <h2>What happens after install</h2>
-            <ol class="steps">
-                <li>
-                    <span class="step-num">1</span>
-                    <h3>Scan kicks off automatically</h3>
-                    <p>The moment install completes, Codatus scans every repository it has access to. Around 30 seconds, depending on org size.</p>
-                </li>
-                <li>
-                    <span class="step-num">2</span>
-                    <h3>Scorecard opens in your browser</h3>
-                    <p>You're taken straight to a live scorecard - no login, no extra setup. The URL is yours to bookmark or share with your team.</p>
-                </li>
-                <li>
-                    <span class="step-num">3</span>
-                    <h3>Share or publish</h3>
-                    <p>Download the scorecard as Markdown, or post it as a GitHub issue in a repo of your choice with one click.</p>
-                </li>
-            </ol>
+    <!-- ===== The alert feed (centerpiece) ===== -->
+    <div class="feed-band">
+        <section class="lp-section">
+            <span class="lp-eyebrow">The alert feed</span>
+            <h2 class="lp-h2">Every silent change becomes a message.</h2>
         </section>
-    </div>
 
-    <div class="ea-section">
-        <div class="ea-card">
-            <div class="ea-card-text">
-                <span class="ea-eyebrow">Early access</span>
-                <p><strong>Codatus is shaped by user feedback.</strong> We ship based on what users ask for. Tell us what's missing, what's broken, or what you'd buy.</p>
+        <div class="console">
+            <div class="console-bar">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <span class="title">codatus · org alerts</span>
+                <span class="live">LIVE</span>
             </div>
-            <div class="ea-card-cta">
-                <a href="mailto:hello@codatus.com">hello@codatus.com</a>
+
+            <div class="log-row">
+                <span class="sev critical">Critical</span>
+                <div>
+                    <div class="log-event"><span class="repo">payments-api</span> went public: visibility changed private → public</div>
+                    <div class="log-meta">by @rhea.okafor · 02:14 UTC · <span class="chan">#security</span></div>
+                </div>
+            </div>
+            <div class="log-row">
+                <span class="sev high">High</span>
+                <div>
+                    <div class="log-event">Branch protection removed from <span class="repo">main</span> on <span class="repo">billing-service</span></div>
+                    <div class="log-meta">by @t.mills · 09:47 UTC · <span class="chan">#security</span></div>
+                </div>
+            </div>
+            <div class="log-row">
+                <span class="sev high">High</span>
+                <div>
+                    <div class="log-event">Required status checks removed on <span class="repo">infra-terraform</span>: merges no longer gated</div>
+                    <div class="log-meta">by @devops-svc · 14:02 UTC · <span class="chan">#security</span></div>
+                </div>
+            </div>
+            <div class="log-row">
+                <span class="sev high">High</span>
+                <div>
+                    <div class="log-event">Required reviewers dropped 2 → 0 on <span class="repo">auth-gateway</span></div>
+                    <div class="log-meta">by @s.haldar · 11:23 UTC · <span class="chan">#security</span></div>
+                </div>
+            </div>
+            <div class="log-row">
+                <span class="sev critical">Critical</span>
+                <div>
+                    <div class="log-event">@deploy-bot added as bypass actor on the main ruleset of <span class="repo">mobile-app</span></div>
+                    <div class="log-meta">by @j.fenwick · 16:38 UTC · <span class="chan">#security</span></div>
+                </div>
+            </div>
+            <div class="log-row">
+                <span class="sev high">High</span>
+                <div>
+                    <div class="log-event">Push protection disabled on <span class="repo">data-pipeline</span></div>
+                    <div class="log-meta">by @k.novak · 08:05 UTC · <span class="chan">#security</span></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script>
-    (function() {
-        var div = document.getElementById('sample-report');
-        if (!div) return;
-        fetch('/sample-scorecard.md')
-            .then(function(r) {
-                if (!r.ok) throw new Error('fetch failed: ' + r.status);
-                return r.text();
-            })
-            .then(function(md) {
-                div.innerHTML = marked.parse(md);
-            })
-            .catch(function() {
-                div.textContent = 'Could not load sample. Try refreshing the page.';
-            });
-    })();
-    </script>
+    <!-- ===== How it works ===== -->
+    <section class="lp-section">
+        <span class="lp-eyebrow">How it works</span>
+        <h2 class="lp-h2">Three steps, then you stop watching.</h2>
+        <ol class="steps-line">
+            <li><span class="n">1</span><span>Install the read-only GitHub App on your org.</span></li>
+            <li><span class="n">2</span><span>Choose where alerts go: Slack or email.</span></li>
+            <li><span class="n">3</span><span>Done. The next time a control changes, you hear about it in the moment.</span></li>
+        </ol>
+    </section>
 
+    <!-- ===== Pricing + CTA (light card on grey band; top-bar link anchors here) ===== -->
+    <div class="pricing-band" id="reserve">
+      <div class="pricing-wrap">
+        <div class="price-card">
+            <span class="lp-eyebrow">One plan</span>
+            <div class="price-amount">$99<span>/month per org</span></div>
+            <ul class="price-features">
+                <li>All six signals</li>
+                <li>Slack and email routing</li>
+                <li>Org-wide coverage</li>
+            </ul>
+            <p class="price-closing">Launching at $99/month. Early users locked in at that rate.</p>
+
+            {% include subscribe-form.html variant="post" heading="" body="" button="Reserve early access" form_id="9533751" %}
+        </div>
+      </div>
+    </div>
