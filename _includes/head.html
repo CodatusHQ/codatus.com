@@ -16,6 +16,9 @@
 
 <title>{{ full_title }}</title>
 <meta name="description" content="{{ page.description }}">
+{%- if page.noindex %}
+<meta name="robots" content="noindex">
+{%- endif %}
 
 <meta property="og:title" content="{{ full_title }}">
 <meta property="og:description" content="{{ page.description }}">

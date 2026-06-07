@@ -6,13 +6,18 @@
     variant - "post" or "list" (default: "post")
     heading - heading text (default: "Follow Codatus by email")
     body - body text (default: blog-post copy)
+    button - submit button label (default: "Subscribe")
+    form_id - Kit form id to submit to (default: the blog list, set below)
   Submits via fetch (Accept: application/json) to Kit's form-action URL; the
   form's tag is configured on Kit's side via the form settings, not posted.
   Status area is always reserved so the form does not jump on submit.
 {%- endcomment -%}
 {%- assign variant = include.variant | default: "post" -%}
-{%- assign heading = include.heading | default: "Follow Codatus by email" -%}
-{%- assign body = include.body | default: "New posts, scanner updates, and what we're learning along the way. No filler." -%}
+{%- comment -%} nil = use default; "" = render nothing (default: would treat "" as missing) {%- endcomment -%}
+{%- if include.heading == nil -%}{%- assign heading = "Follow Codatus by email" -%}{%- else -%}{%- assign heading = include.heading -%}{%- endif -%}
+{%- if include.body == nil -%}{%- assign body = "New posts, product updates, and what we're learning along the way." -%}{%- else -%}{%- assign body = include.body -%}{%- endif -%}
+{%- assign button = include.button | default: "Subscribe" -%}
+{%- assign form_id = include.form_id | default: "9484633" -%}
 {%- if variant == "list" -%}
   {%- assign class_mod = "bd-form--list" -%}
   {%- assign heading_tag = "h3" -%}
@@ -20,13 +25,18 @@
   {%- assign class_mod = "bd-form--post" -%}
   {%- assign heading_tag = "h2" -%}
 {%- endif -%}
-<form class="bd-form {{ class_mod }}" novalidate>
+{%- if heading == "" and body == "" -%}{%- assign class_mod = class_mod | append: " bd-form--bare" -%}{%- endif -%}
+<form class="bd-form {{ class_mod }}" data-bd-form-id="{{ form_id }}" novalidate>
+{%- if heading != "" %}
   <{{ heading_tag }}>{{ heading }}</{{ heading_tag }}>
+{%- endif %}
+{%- if body != "" %}
   <p class="bd-body">{{ body }}</p>
+{%- endif %}
   <div class="bd-form-cell">
     <div class="bd-row">
       <input type="email" name="email_address" placeholder="you@example.com" required>
-      <button type="submit">Subscribe</button>
+      <button type="submit">{{ button }}</button>
     </div>
     <div class="bd-status" aria-live="polite"></div>
   </div>
@@ -40,6 +50,7 @@
     form.dataset.bdInit = '1';
     var input = form.querySelector('input[name="email_address"]');
     var status = form.querySelector('.bd-status');
+    var formId = form.dataset.bdFormId;
     function resetToIdle() {
       form.classList.remove('is-busy', 'is-done');
       status.textContent = '';
@@ -63,7 +74,7 @@
       form.classList.add('is-busy');
       status.textContent = 'Subscribing...';
       status.className = 'bd-status';
-      fetch('https://app.convertkit.com/forms/9484633/subscriptions', {
+      fetch('https://app.convertkit.com/forms/' + formId + '/subscriptions', {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
         body: fd,

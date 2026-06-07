@@ -5,56 +5,6 @@ description: Of 128 YC-backed dev tools companies, 44 enable branch protection b
 og_image: /og/only-2-of-128-yc-backed-dev-tools-companies-block-unchecked-merges.png
 ---
 
-<style>
-/* ----- bar chart ----- */
-.post-bars { margin: 24px 0 12px; padding: 18px 20px 14px; background: #fafafa; border: 1px solid #eee; border-radius: 4px; }
-.post-bars .row { display: grid; grid-template-columns: 180px 1fr 56px; align-items: center; gap: 14px; margin-bottom: 12px; }
-.post-bars .label { font-size: 13.5px; color: #1a1a1a; font-weight: 600; }
-.post-bars .track { position: relative; background: #ececec; height: 22px; border-radius: 3px; overflow: hidden; }
-.post-bars .grid { position: absolute; inset: 0; pointer-events: none; }
-.post-bars .grid span { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,0.7); }
-.post-bars .fill { background: linear-gradient(90deg, #E8A020 0%, #d18a0c 100%); height: 100%; border-right: 1px solid rgba(0,0,0,0.08); transition: width 0.4s ease; }
-.post-bars .val { font-size: 14px; color: #1a1a1a; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; }
-.post-bars .axis { display: grid; grid-template-columns: 180px 1fr 56px; gap: 14px; margin-top: 8px; }
-.post-bars .axis .ticks { position: relative; height: 14px; font-size: 11px; color: #888; font-variant-numeric: tabular-nums; }
-.post-bars .axis .ticks span { position: absolute; top: 0; transform: translateX(-50%); }
-.post-bars .axis .ticks span:first-child { transform: translateX(0); }
-.post-bars .axis .ticks span:last-child { transform: translateX(-100%); }
-
-/* ----- table ----- */
-.post-table-wrap { margin: 16px 0 24px; max-height: 520px; overflow: auto; border: 1px solid #eee; border-radius: 4px; }
-.post-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-.post-table th, .post-table td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #eee; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.post-table th { font-weight: 600; color: #1a1a1a; cursor: pointer; user-select: none; background: #fafafa; position: sticky; top: 0; z-index: 1; box-shadow: inset 0 -1px 0 #ddd; }
-.post-table th:hover { background: #f0f0f0; }
-.post-table th.sorted-asc::after { content: " \2191"; color: #b07800; font-weight: 700; }
-.post-table th.sorted-desc::after { content: " \2193"; color: #b07800; font-weight: 700; }
-.post-table tbody tr:hover { background: #fafafa; }
-.post-table tbody tr:last-child td { border-bottom: none; }
-.post-table a { color: #b07800; border-bottom: 1px solid rgba(176,120,0,0.3); }
-.post-table a:hover { border-bottom-color: #b07800; }
-
-/* ----- scatter (Chart.js) ----- */
-.post-scatter { margin: 18px 0 12px; padding: 14px; background: #fafafa; border: 1px solid #eee; border-radius: 4px; }
-.post-scatter-canvas { position: relative; height: 460px; }
-.post-scatter-hint { margin-top: 6px; font-size: 12px; color: #888; text-align: center; }
-
-/* ----- collapsible ----- */
-.post-details { margin: 28px 0; border-left: 3px solid #E8A020; background: #fafafa; border-radius: 0 4px 4px 0; }
-.post-details summary { cursor: pointer; font-weight: 600; color: #1a1a1a; padding: 12px 16px; list-style: none; font-size: 14.5px; }
-.post-details summary::-webkit-details-marker { display: none; }
-.post-details summary::before { content: "\25B8\00a0"; color: #E8A020; font-size: 12px; }
-.post-details[open] summary::before { content: "\25BE\00a0"; }
-.post-details .inner { padding: 0 16px 14px; }
-.post-details .inner p { font-size: 14.5px; line-height: 1.7; }
-.post-details .inner ul { font-size: 14.5px; line-height: 1.7; }
-
-@media (max-width: 720px) {
-  .post-bars .row, .post-bars .axis { grid-template-columns: 140px 1fr 44px; gap: 10px; }
-  .post-scatter-canvas { height: 360px; }
-}
-</style>
-
 We scored 6,195 public GitHub repos at 128 YC-backed dev tools companies on four rules. The median scored 21 out of 100; no company cleared 80. Apollo took the top spot at 71.
 
 But the most interesting thing isn't the scores. It's the pattern in the data: of the 44 companies that enable branch protection on most of their repos, only 2 block unchecked merges.
