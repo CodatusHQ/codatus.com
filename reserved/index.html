@@ -1,19 +1,19 @@
 ---
 layout: content
-title: Welcome aboard
-description: You're subscribed to Codatus updates. Here's the most recent post.
+title: You're on the launch list
+description: You've reserved early access to Codatus. We'll email you the moment it's ready.
 noindex: true
 ---
 <div class="subscribed-page">
 
-<h1 class="blog-title">Welcome aboard</h1>
+<h1 class="blog-title">You're on the list</h1>
 
-<p class="subscribed-intro">You're confirmed - new posts and product updates will land in your inbox.</p>
+<p class="subscribed-intro">Thanks for reserving early access. We'll email you the moment Codatus is ready, with early users locked in at our launch rate.</p>
 
 {% assign latest = site.posts | first %}
 
 {% if latest %}
-<p class="subscribed-intro">The most recent post is below:</p>
+<p class="subscribed-intro">While you wait, the latest from the blog:</p>
 
 <a class="subscribed-card" href="{{ latest.url }}">
   <div class="subscribed-card-title">{{ latest.title }}</div>
